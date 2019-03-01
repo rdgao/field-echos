@@ -10,7 +10,7 @@ sys.path.append('../')
 import utils
 
 
-def __main__(argv):
+def main(argv):
 
     # define data and result paths
     basepath = '/Users/rdgao/Documents/data/NeuroTycho/'
@@ -31,39 +31,39 @@ def __main__(argv):
 
     if 'do_psds' in argv:
         for ds in datasets:
-        print('------\n',ds)
-        for i in range(len(session_indices)):
-            session = session_indices[i]
-            outfile = str(i)+'_'+(session_labels[i]+'_'+ds).replace('/','_').replace('+','_')
-            print(outfile)
+            print('------\n',ds)
+            for i in range(len(session_indices)):
+                session = session_indices[i]
+                outfile = str(i)+'_'+(session_labels[i]+'_'+ds).replace('/','_').replace('+','_')
+                print(outfile)
 
-            # grab ECoG data
-            indices = access_nt.get_cond(data_path+ds+sess_append, session[0], session[1], session[2])
-            data = access_nt.get_ECoG(data_path+ds+sess_append, session[0], range(1,129), indices)
-            fs = 1000.
+                # grab ECoG data
+                indices = access_nt.get_cond(data_path+ds+sess_append, session[0], session[1], session[2])
+                data = access_nt.get_ECoG(data_path+ds+sess_append, session[0], range(1,129), indices)
+                fs = 1000.
 
-            # compute PSDs
-            psd_path = result_basepath + outfile + '/psd/'
+                # compute PSDs
+                psd_path = result_basepath + outfile + '/psd/'
 
-            # 1Hz resolution psd
-            saveout_path = utils.makedir(psd_path,'/1sec/', timestamp=False)
-            nperseg, noverlap, f_lim, spg_outlier_pct = int(fs), int(fs/2), 200., 5
-            f_axis, psd_mean = ndsp.spectral.compute_spectrum(data, fs, method='mean', nperseg=nperseg, noverlap=noverlap, f_lim=f_lim, spg_outlier_pct=spg_outlier_pct)
-            f_axis, psd_med = ndsp.spectral.compute_spectrum(data, fs, method='median', nperseg=nperseg, noverlap=noverlap, f_lim=f_lim, spg_outlier_pct=spg_outlier_pct)
-            save_dict = dict((name,eval(name)) for name in ['f_axis','psd_mean', 'psd_med','nperseg','noverlap','fs','spg_outlier_pct'])
-            np.savez(file=saveout_path+'psd.npz', **save_dict)
+                # 1Hz resolution psd
+                saveout_path = utils.makedir(psd_path,'/1sec/', timestamp=False)
+                nperseg, noverlap, f_lim, spg_outlier_pct = int(fs), int(fs/2), 200., 5
+                f_axis, psd_mean = ndsp.spectral.compute_spectrum(data, fs, method='mean', nperseg=nperseg, noverlap=noverlap, f_lim=f_lim, spg_outlier_pct=spg_outlier_pct)
+                f_axis, psd_med = ndsp.spectral.compute_spectrum(data, fs, method='median', nperseg=nperseg, noverlap=noverlap, f_lim=f_lim, spg_outlier_pct=spg_outlier_pct)
+                save_dict = dict((name,eval(name)) for name in ['f_axis','psd_mean', 'psd_med','nperseg','noverlap','fs','spg_outlier_pct'])
+                np.savez(file=saveout_path+'psd.npz', **save_dict)
 
-            # 0.2Hz resolution psd
-            saveout_path = utils.makedir(psd_path,'/5sec/', timestamp=False)
-            nperseg, noverlap, f_lim, spg_outlier_pct = int(fs*5), int(fs*4), 200., 5
-            f_axis, psd_mean = ndsp.spectral.compute_spectrum(data, fs, method='mean', nperseg=nperseg, noverlap=noverlap, f_lim=f_lim, spg_outlier_pct=spg_outlier_pct)
-            f_axis, psd_med = ndsp.spectral.compute_spectrum(data, fs, method='median', nperseg=nperseg, noverlap=noverlap, f_lim=f_lim, spg_outlier_pct=spg_outlier_pct)
-            save_dict = dict((name,eval(name)) for name in ['f_axis','psd_mean', 'psd_med','nperseg','noverlap','fs','spg_outlier_pct'])
-            np.savez(file=saveout_path+'psd.npz', **save_dict)
+                # 0.2Hz resolution psd
+                saveout_path = utils.makedir(psd_path,'/5sec/', timestamp=False)
+                nperseg, noverlap, f_lim, spg_outlier_pct = int(fs*5), int(fs*4), 200., 5
+                f_axis, psd_mean = ndsp.spectral.compute_spectrum(data, fs, method='mean', nperseg=nperseg, noverlap=noverlap, f_lim=f_lim, spg_outlier_pct=spg_outlier_pct)
+                f_axis, psd_med = ndsp.spectral.compute_spectrum(data, fs, method='median', nperseg=nperseg, noverlap=noverlap, f_lim=f_lim, spg_outlier_pct=spg_outlier_pct)
+                save_dict = dict((name,eval(name)) for name in ['f_axis','psd_mean', 'psd_med','nperseg','noverlap','fs','spg_outlier_pct'])
+                np.savez(file=saveout_path+'psd.npz', **save_dict)
 
     if 'do_fooof' in argv:
-        fooof_settings = [['knee', 3, (2,70)],
-                 ['fixed', 3, (2,70)],
+        fooof_settings = [['knee', 3, (1,70)],
+                 ['fixed', 3, (1,70)],
                  ['fixed', 1, (1,10)],
                  ['fixed', 1, (30,70)]]
 
