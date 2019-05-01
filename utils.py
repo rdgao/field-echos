@@ -1,5 +1,6 @@
 import os, datetime
 import numpy as np
+import scipy as sp
 import pandas as pd
 from fooof import FOOOFGroup
 
@@ -38,10 +39,10 @@ def return_fg_fits(fg_file, fg_folder):
     """
     fg = FOOOFGroup()
     fg.load(fg_file, fg_folder)
-    aps = fg.get_all_data('aperiodic_params') # get aperiodic parameters
-    pks = fg.get_all_data('peak_params')
-    err = fg.get_all_data('error')
-    r2s = fg.get_all_data('r_squared')
+    aps = fg.get_params('aperiodic_params') # get aperiodic parameters
+    pks = fg.get_params('peak_params')
+    err = fg.get_params('error')
+    r2s = fg.get_params('r_squared')
     return aps, pks, err, r2s
 
 def convert_knee_val(knee, exponent=2.):
