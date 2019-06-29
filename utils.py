@@ -267,21 +267,52 @@ def apply_affine(f_affine, coord, ijk2xyz):
         # MNI coordinate to index
         return np.dot(np.linalg.inv(M_aff),coord-M_trsl)
 
-def ecog_gene_corr(df_combined, df_anat, avg_dev_func, ephys_feat='tau', anat_feat='T1T2', age_subset=None):
+def project_ecog_mmp(ecog_coors_transformed, MMP_sparse_coords, r_search=3, find_nearest=False):
+    """
+    Project ecog electrodes onto MMP based on the electrode's MNI coordinate.
+    Finds all voxels within radius of r_search in MMP, where there's a non-zeros
+    parcellation value, and return those voxel distances from the elec and indices
+    """
+    # build kd_tree and do a ball search around all electrodes
+    kd_tree = sp.spatial.KDTree(MMP_sparse_coords)
+    elec_mmp_proj = kd_tree.query_ball_point(ecog_coors_transformed, r_search)
+
+    # find the distances and sort by that
+    # also, fill any empties with closest point if given option
+    dist_ind_pairs = []
+    for p_i, projs in enumerate(elec_mmp_proj):
+        if len(projs):
+            dists = np.linalg.norm(MMP_sparse_coords[projs]-ecog_coors_transformed[p_i], axis=1)
+            pair = np.vstack((dists[dists.argsort()],np.array(projs)[dists.argsort()])).T
+        else:
+            pair = np.array([])
+            if find_nearest:
+                pair = np.array(kd_tree.query(ecog_coors_transformed[p_i]))[None,:]
+
+        dist_ind_pairs.append(pair)
+
+    return dist_ind_pairs
+
+
+def ecog_gene_corr(df_combined, df_anat, avg_dev_func, ephys_feat='tau', anat_feat='T1T2', group_patients=True, age_subset=None):
     """
     Return ephys and anatomy feature correlation and arrays for parcel average and per-electrode.
     """
+    if group_patients:
+        df_run = df_combined.groupby(['patient', 'gparcel'], as_index=False).agg(avg_dev_func[0])
+    else:
+        df_run = df_combined
     # if no age restricted indices are specified, take all values
-    if age_subset is None: age_subset=df_combined['age']>0
+    if age_subset is None: age_subset=df_run['age']>0
     # parcel-level average
-    ephys_avg = df_combined[age_subset].groupby('gparcel').agg(avg_dev_func[0])[ephys_feat]
-    ephys_dev = df_combined[age_subset].groupby('gparcel').agg(avg_dev_func[1])[ephys_feat]
+    ephys_avg = df_run[age_subset].groupby('gparcel').agg(avg_dev_func[0])[ephys_feat]
+    ephys_dev = df_run[age_subset].groupby('gparcel').agg(avg_dev_func[1])[ephys_feat]
     anat_avg = df_anat[anat_feat][ephys_avg.index]
     rho_agg, pv_agg = sp.stats.spearmanr(ephys_avg, anat_avg, nan_policy='omit')
 
     # return electrode level
-    anat_elec = np.array([df_anat.iloc[int(p_i-1)][anat_feat] if ~np.isnan(p_i) else np.nan for p_i in df_combined['gparcel']])[age_subset]
-    ephys_elec = df_combined[ephys_feat][age_subset]
+    anat_elec = np.array([df_anat.iloc[int(p_i-1)][anat_feat] if ~np.isnan(p_i) else np.nan for p_i in df_run['gparcel']])[age_subset]
+    ephys_elec = df_run[ephys_feat][age_subset]
     rho_elec, pv_elec = sp.stats.spearmanr(ephys_elec, anat_elec, nan_policy='omit')
     return ephys_avg, ephys_dev, anat_avg, (rho_agg, pv_agg), ephys_elec, anat_elec, (rho_elec, pv_elec)
 
