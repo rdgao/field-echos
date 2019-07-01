@@ -311,7 +311,7 @@ def ecog_gene_corr(df_combined, df_anat, avg_dev_func, ephys_feat='tau', anat_fe
     rho_agg, pv_agg = sp.stats.spearmanr(ephys_avg, anat_avg, nan_policy='omit')
 
     # return electrode level
-    anat_elec = np.array([df_anat.iloc[int(p_i-1)][anat_feat] if ~np.isnan(p_i) else np.nan for p_i in df_run['gparcel']])[age_subset]
+    anat_elec = np.array([df_anat.iloc[int(p_i-1)][anat_feat] if ~np.isnan(p_i) else np.nan for p_i in df_run['gparcel'][age_subset]])
     ephys_elec = df_run[ephys_feat][age_subset]
     rho_elec, pv_elec = sp.stats.spearmanr(ephys_elec, anat_elec, nan_policy='omit')
     return ephys_avg, ephys_dev, anat_avg, (rho_agg, pv_agg), ephys_elec, anat_elec, (rho_elec, pv_elec)
