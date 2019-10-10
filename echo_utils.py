@@ -1,9 +1,11 @@
-import os, datetime
+import os, datetime, mne
 import numpy as np
 import scipy as sp
 import pandas as pd
+import nibabel as ni
 from fooof import FOOOFGroup, synth
 import matplotlib.pyplot as plt
+from surfer import Brain
 
 def makedir(base, itm='/', timestamp=True):
     """
@@ -315,6 +317,43 @@ def ecog_gene_corr(df_combined, df_anat, avg_dev_func, ephys_feat='tau', anat_fe
     ephys_elec = df_run[ephys_feat][age_subset]
     rho_elec, pv_elec = sp.stats.spearmanr(ephys_elec, anat_elec, nan_policy='omit')
     return ephys_avg, ephys_dev, anat_avg, (rho_agg, pv_agg), ephys_elec, anat_elec, (rho_elec, pv_elec)
+
+def plot_MMP(data, save_file, minmax=None, cmap='inferno', alpha=1, add_border=False):
+    """
+    Plots arbitrary array of data onto MMP parcellation
+    """
+    ## Folloing this tutorial
+    # https://github.com/nipy/PySurfer/blob/master/examples/plot_parc_values.py
+
+    # I assume I will always be using this parcellation, at least for now
+    subjects_dir = mne.datasets.sample.data_path() + '/subjects'
+    annot_file = subjects_dir + '/fsaverage/label/lh.HCPMMP1.annot'
+    mmp_labels, ctab, names = ni.freesurfer.read_annot(annot_file)
+
+    if len(names)-len(data)==1:
+        # short one label cuz 0 is unassigned in the data, fill with -1
+        data_app = np.hstack((-1,data))
+        vtx_data = data_app[mmp_labels]
+    else:
+        vtx_data = data[mmp_labels]
+        vtx_data[mmp_labels < 1] = -1
+
+    # plot brain
+    brain = Brain('fsaverage', 'lh', 'inflated', subjects_dir=subjects_dir,
+                  cortex='bone', background='white', size=800, show_toolbar=True, offscreen=True)#, views=['med', 'lat'])
+
+    if add_border:
+        brain.add_annotation((mmp_labels, np.array([[0,0,0, c[3], c[4]] for c in ctab])))
+
+
+    if minmax is None:
+        minmax = [np.min(data), np.max(data)]
+    # add data
+    brain.add_data(vtx_data, minmax[0], minmax[1], colormap=cmap, alpha=alpha)
+
+    # save
+    brain.show_view('med')
+    brain.save_imageset(save_file, ['med', 'lat'], 'png')
 
 ### ------ for handling spiking analyses
 
