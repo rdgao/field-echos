@@ -6,6 +6,8 @@ import nibabel as ni
 from fooof import FOOOFGroup, synth
 import matplotlib.pyplot as plt
 from surfer import Brain
+from mpl_toolkits.axes_grid1.inset_locator import inset_axes
+from seaborn import despine
 
 def makedir(base, itm='/', timestamp=True):
     """
@@ -318,7 +320,8 @@ def ecog_gene_corr(df_combined, df_anat, avg_dev_func, ephys_feat='tau', anat_fe
     rho_elec, pv_elec = sp.stats.spearmanr(ephys_elec, anat_elec, nan_policy='omit')
     return ephys_avg, ephys_dev, anat_avg, (rho_agg, pv_agg), ephys_elec, anat_elec, (rho_elec, pv_elec)
 
-def plot_MMP(data, save_file, minmax=None, cmap='inferno', alpha=1, add_border=False):
+
+def plot_MMP(data, save_file=None, minmax=None, thresh=None, cmap='inferno', alpha=1, add_border=False, bp=3):
     """
     Plots arbitrary array of data onto MMP parcellation
     """
@@ -336,24 +339,71 @@ def plot_MMP(data, save_file, minmax=None, cmap='inferno', alpha=1, add_border=F
         vtx_data = data_app[mmp_labels]
     else:
         vtx_data = data[mmp_labels]
-        vtx_data[mmp_labels < 1] = -1
+        vtx_data[mmp_labels < 1] = -1e6
 
     # plot brain
     brain = Brain('fsaverage', 'lh', 'inflated', subjects_dir=subjects_dir,
-                  cortex='bone', background='white', size=800, show_toolbar=True, offscreen=True)#, views=['med', 'lat'])
+                  cortex=None, background='white', size=800, show_toolbar=False, offscreen=True)
 
     if add_border:
         brain.add_annotation((mmp_labels, np.array([[0,0,0, c[3], c[4]] for c in ctab])))
 
-
     if minmax is None:
         minmax = [np.min(data), np.max(data)]
     # add data
-    brain.add_data(vtx_data, minmax[0], minmax[1], colormap=cmap, alpha=alpha)
+    if thresh is None:
+        thresh = minmax[0]
+    brain.add_data(vtx_data, minmax[0], minmax[1], colormap=cmap, alpha=alpha, colorbar=False, thresh=thresh)
+    # plot brain views
+    brainviews = brain.save_imageset(None, ['lat', 'med'])
 
-    # save
-    brain.show_view('med')
-    brain.save_imageset(save_file, ['med', 'lat'], 'png')
+    # merge brainviews and plot horizontally
+    plt.imshow(np.concatenate(brainviews, axis=1), cmap=cmap)
+    despine(bottom=True, left=True); plt.xticks([]);plt.yticks([])
+    cbaxes = inset_axes(plt.gca(), width="50%", height="4%", loc=8, borderpad=bp)
+    plt.colorbar(cax=cbaxes, orientation='horizontal')
+    plt.clim(minmax[0], minmax[1])
+    plt.tight_layout()
+    if save_file:
+        plt.savefig(save_file, bbox_inches='tight')
+#
+#
+# def plot_MMP(data, save_file, minmax=None, cmap='inferno', alpha=1, add_border=False):
+#     """
+#     Plots arbitrary array of data onto MMP parcellation
+#     """
+#     ## Folloing this tutorial
+#     # https://github.com/nipy/PySurfer/blob/master/examples/plot_parc_values.py
+#
+#     # I assume I will always be using this parcellation, at least for now
+#     subjects_dir = mne.datasets.sample.data_path() + '/subjects'
+#     annot_file = subjects_dir + '/fsaverage/label/lh.HCPMMP1.annot'
+#     mmp_labels, ctab, names = ni.freesurfer.read_annot(annot_file)
+#
+#     if len(names)-len(data)==1:
+#         # short one label cuz 0 is unassigned in the data, fill with -1
+#         data_app = np.hstack((-1,data))
+#         vtx_data = data_app[mmp_labels]
+#     else:
+#         vtx_data = data[mmp_labels]
+#         vtx_data[mmp_labels < 1] = -1
+#
+#     # plot brain
+#     brain = Brain('fsaverage', 'lh', 'inflated', subjects_dir=subjects_dir,
+#                   cortex='bone', background='white', size=800, show_toolbar=True, offscreen=True)#, views=['med', 'lat'])
+#
+#     if add_border:
+#         brain.add_annotation((mmp_labels, np.array([[0,0,0, c[3], c[4]] for c in ctab])))
+#
+#
+#     if minmax is None:
+#         minmax = [np.min(data), np.max(data)]
+#     # add data
+#     brain.add_data() ( vtx_data, minmax[0], minmax[1], colormap=cmap, alpha=alpha)
+#
+#     # save
+#     brain.show_view('med')
+#     brain.save_imageset(save_file, ['med', 'lat'], 'png')
 
 ### ------ for handling spiking analyses
 
