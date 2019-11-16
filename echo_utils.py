@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 from surfer import Brain
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 from seaborn import despine
+from scipy.stats import spearmanr
 
 def makedir(base, itm='/', timestamp=True):
     """
@@ -366,6 +367,63 @@ def plot_MMP(data, save_file=None, minmax=None, thresh=None, cmap='inferno', alp
     plt.tight_layout()
     if save_file:
         plt.savefig(save_file, bbox_inches='tight')
+
+
+def perm_spearman(x, y, n_perms=1000, resamp='shuffle'):
+    """Compute permutation statistic on spearman correlation.
+
+    Parameters
+    ----------
+    x : np array
+        dataset 1.
+    y : np array
+        dataset 2 (permuted)
+    n_perms : int
+        Number of times to perform permutation.
+    resamp : float
+        'shuffle' or 'roll'.
+        'shuffle' shuffles the data; 'roll' circshifts the data.
+
+    Returns
+    -------
+    r_observed, p_est, p_resamp, null_dist
+
+    """
+    r_observed, p_est = spearmanr(x, y, nan_policy='omit')
+    if resamp is 'shuffle':
+        null_dist = np.array([spearmanr(x, np.random.permutation(y), nan_policy='omit')[0] for n in range(n_perms)])
+    elif resamp is 'roll':
+        len_x = x.shape[0]
+        null_dist = np.array([spearmanr(x, np.roll(y, np.random.randint(len_x)), nan_policy='omit')[0] for n in range(n_perms)])
+
+    p_resamp = ((r_observed<null_dist).sum() if r_observed>0 else (r_observed>null_dist).sum())/n_perms
+    return r_observed, p_est, p_resamp, null_dist
+
+
+def sig_str(rho, pv, pv_thres=[0.05, 0.01, 0.005, 0.001], form='*'):
+    """Generates the string to print rho and p-value.
+
+    Parameters
+    ----------
+    rho : float
+    pv : float
+    pv_thres : list
+        P-value thresholds to for successive # of stars to print.
+    form : str
+        '*' to print stars after rho, otherwise print p-value on separate line.
+
+    Returns
+    -------
+    str
+    """
+    if form is '*':
+        s = r'$\rho$ = %.3f '%rho + np.sum(pv<=np.array(pv_thres))*'*'
+    else:
+        if pv<pv_thres[-1]:
+            s = r'$\rho$ = %.3f'%rho+ '\np < %.3f'%pv_thres[-1]
+        else:
+            s = r'$\rho$ = %.3f'%rho+ '\np = %.3f'%pv
+    return s
 #
 #
 # def plot_MMP(data, save_file, minmax=None, cmap='inferno', alpha=1, add_border=False):
