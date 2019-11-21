@@ -1,13 +1,14 @@
 
 
 #%%
+
 %load_ext autoreload
 %autoreload 2
 %matplotlib inline
 sys.path
 
 from fooof import FOOOFGroup
-from gen_utils import flat, mappings, bound
+from gen_utils import flat, Map, bound, reveal
 from neurodsp import sim as nsim, spectral
 from numpy import r_, s_
 from seaborn import despine
@@ -17,16 +18,18 @@ import numpy as np
 import scipy as sp
 import sys, hdf5storage as hdf
 from analysis.plotting import *
+
 #%%md
 """
-Simulated population poisson spiking of exponential-/alpha shaped neuronal spikes"""
+<h3 style="font-size:12px; text-transform: capitalize;">Simulated population poisson spiking of exponential-/alpha shaped neuronal spikes</h3>"""
 #%%
 """
 Set (sim) / Record (exp) Parameters"""
 #%%
 
+
 #Both:
-sim, exp, f, t, tau, num = mappings(6)
+sim, exp, f, t, tau, num = Map.create('sim', 'exp', 'f', 't', 'tau', 'num')
 sim.fs = exp.fs = fs = 1000. # Hz
 sim.t.period  = exp.t.period = t.period  = 3. # s
 sim.f.range  = exp.f.range  = f.range = bound(2,200)
@@ -34,8 +37,8 @@ sim.f.range  = exp.f.range  = f.range = bound(2,200)
 num.samples = bound(int(t.period / (1/fs))) # samples
 t.onset = -0.5  # s : event max occurs approx. 500ms after event onset.
 
-
 #Sim:
+sim
 tau.rise = 0
 tau.decay = np.arange(0.005, 0.08, 0.0018) #synaptic decay constants
 sim.t.axis = np.arange(0, t.period, 1 / fs)
@@ -44,8 +47,6 @@ sim.t.axis = np.arange(0, t.period, 1 / fs)
 exp.t.kernel_times = flat(hdf.loadmat('t.mat')['T'])
 exp.t.axis = np.arange(t.onset, t.onset + t.period, 1 / fs)
 num.kernels = bound(len(exp.t.kernel_times))
-
-
 
 #%%md
 """
@@ -64,7 +65,9 @@ for i, kernel in enumerate(kernels):
         if np.any(well):
             exp.kernels[:, i] += sum(well,1)[:num.samples]
 
-#Both:
+
+#%%
+#Plot:
 fg = plt.figure()
 g = fg.add_gridspec(2, 1)
 c = getColors(num.kernels + 1); c.pop()
@@ -95,11 +98,21 @@ for kernel, well_psd in enumerate(spectra):
 
 
 #Both:
-exp.f.axis = sim.f.axis = f.axis = np.fft.fftfreq(num.samples, 1/fs)[:int(np.floor(num.samples/2))]
+sim.f.axis = exp.f.axis = f.axis = np.fft.fftfreq(num.samples, 1/fs)[:int(np.floor(num.samples/2))]
 
-psds = sim.psds, exp.psds = list(map(lambda k: np.abs(sp.fft(k,axis=0)**2)[:len(f.axis)], [sim.kernels, exp.kernels])) # Exp spectrum reflects spectral density w.r.t. the population-synchronous, network spike event.
-psds.append(exp.well.psds)
 
+sim.psds, exp.psds = list(
+        map(lambda k: np.abs(sp.fft(k,axis=0)**2)[:len(sim.f.axis)], [sim.kernels, exp.kernels])) # Exp spectrum reflects spectral density w.r.t. the kernel of the 3s, population-synchronou, network spike event.
+
+psds = Map.create('psds')
+psds.update(
+        sim=sim.psds,
+        exp=exp.psds,
+        well=copy(exp.
+        well.psds))
+psds.values()
+psds.items()
+#%%
 #Plot:
 fg = plt.figure()
 g = fg.add_gridspec(3, 1)
@@ -107,10 +120,10 @@ g = fg.add_gridspec(3, 1)
 f.axes = squeeze([sim.f.axis, exp.f.axis, exp.well.f.axis()])
 axes = fg.add_subplot(g[0, 0]), fg.add_subplot(g[1, 0]), fg.add_subplot(g[2, 0])
 
-for ax, f_axis, psd in zip(axes, f.axes, psds):
+for ax, f_axis, psd in zip(axes, f.axes, [sim.psds, exp.psds, exp.well.psds]):
     for i in num.kernels():
         # print([shape(ax), shape(f_axis), shape(psd)])
-        ax.loglog(f_axis[f.range()], psd[f.range(), i])
+        ax.loglog(f.axis[f.range()], psd[f.range(), i])
     ax.set_xlabel("Frequency (Hz)")
     ax.set_ylabel("Power")
 
@@ -136,12 +149,23 @@ def fit_knee(freqs, psd):
     knee_p = [psd[np.argmin(np.abs((f.axis[f.range()] - (knee_freq[i])))), i] for i in num.kernels()]
     return taus, knee_freq, knee_p
 
-for n, freqs, psd in zip([sim, exp, exp.well], f.axes, psds):
-    taus, knee_freq, knee_p = fit_knee(freqs, psd)
-    n.knee.update(dict(
+modes = Map.create("modes")
+modes.update(dict(sim=sim.copy(), exp=exp.copy(), well=exp.well.copy()))
+modes.values()
+modes.keys()
+sim
+Map("sim", sim.copy())
+from gen_utils import Map
+modes.sim.name
+modes.well
+dir(modes)
+for mode, freqs, psd in zip(modes.values(), f.axes, psds):
+    mode.knee = Map("knee")
+    taus, mode.knee.freq, mode.knee.p = fit_knee(freqs, psd)
+    mode.knee.update(dict(
             taus = taus,
-            freq = knee_freq,
-            p    = knee_p))
+            freq = knee.freq,
+            p = knee.p))
 """
 
 Running FOOOFGroup across 8 power spectra.
@@ -183,14 +207,11 @@ for i, n in enumerate(noise):
     noise[i] = noise[i][:t_max]
     ac[i] = ac[i][:t_max]
 
-noise = np.vstack(noise)
-ac = np.vstack(ac).T
-
 
 # FOOOF PSDs without knee
 f_axis, PSD = spectral.compute_spectrum(noise, fs)
 taus, knee_freq, knee_p = fit_knee(f_axis, PSD.T)
-
+N
 t_axis = np.arange(0,T,1/fs)
 plt.figure(figsize=(12,3))
 plt.plot(t_axis[:int(fs)], noise.T[:int(fs),:], alpha=0.9)
