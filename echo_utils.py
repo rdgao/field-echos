@@ -322,7 +322,7 @@ def ecog_gene_corr(df_combined, df_anat, avg_dev_func, ephys_feat='tau', anat_fe
     return ephys_avg, ephys_dev, anat_avg, (rho_agg, pv_agg), ephys_elec, anat_elec, (rho_elec, pv_elec)
 
 
-def plot_MMP(data, save_file=None, minmax=None, thresh=None, cmap='inferno', alpha=1, add_border=False, bp=3):
+def plot_MMP(data, save_file=None, minmax=None, thresh=None, cmap='inferno', alpha=1, add_border=False, bp=3, title=None):
     """
     Plots arbitrary array of data onto MMP parcellation
     """
@@ -365,11 +365,31 @@ def plot_MMP(data, save_file=None, minmax=None, thresh=None, cmap='inferno', alp
     plt.colorbar(cax=cbaxes, orientation='horizontal')
     plt.clim(minmax[0], minmax[1])
     plt.tight_layout()
+    if title is not None:
+        plt.title(title)
     if save_file:
         plt.savefig(save_file, bbox_inches='tight')
 
+def compute_weighted_average(df_feature, df_W, w_thresh=0.5, axis=0, method='weighted'):
+    if method is 'weighted':
+        # method 1: weighted average of all parcels
+        #    this makes the most sense? weights all parcels, and the non-confident ones are already downweighted
+        return (df_feature*df_W).sum(axis=axis)/df_W.sum(axis=axis)
 
-def perm_spearman(x, y, n_perms=1000, resamp='shuffle'):
+    elif method is 'thresh_weighted':
+        # method 2: weighted average of suprathreshold parcels
+        #    this will approach method 1 as w_thresh approaches 0
+        thresh_mat = df_W>=w_thres
+        return (df_feature*df_W)[thresh_mat].sum(axis=axis)/df_W[thresh_mat].sum(axis=axis)
+
+    elif method is 'thresh_mean':
+        # method 3: simple average of suprathreshold parcels
+        #    not sure if it makes sense to weight all suprathreshold parcels equally
+        thresh_mat = df_W>=w_thres
+        return np.nanmean((df_feature*df_W)[thresh_mat],axis=axis)
+
+
+def perm_spearman(x, y, n_perms=1000, resamp='shuffle', tails='two'):
     """Compute permutation statistic on spearman correlation.
 
     Parameters
@@ -396,11 +416,16 @@ def perm_spearman(x, y, n_perms=1000, resamp='shuffle'):
         len_x = x.shape[0]
         null_dist = np.array([spearmanr(x, np.roll(y, np.random.randint(len_x)), nan_policy='omit')[0] for n in range(n_perms)])
 
-    p_resamp = ((r_observed<null_dist).sum() if r_observed>0 else (r_observed>null_dist).sum())/n_perms
+    if tails is 'one':
+        p_resamp = ((r_observed<null_dist).sum() if r_observed>0 else (r_observed>null_dist).sum())/n_perms
+
+    elif tails is 'two':
+        p_resamp = (abs(r_observed)<abs(null_dist)).sum()/n_perms
+
     return r_observed, p_est, p_resamp, null_dist
 
 
-def sig_str(rho, pv, pv_thres=[0.05, 0.01, 0.005, 0.001], form='*'):
+def sig_str(rho, pv, pv_thres=[0.05, 0.01, 0.005, 0.001], form='*', corr_letter=r'$\rho$'):
     """Generates the string to print rho and p-value.
 
     Parameters
@@ -422,7 +447,7 @@ def sig_str(rho, pv, pv_thres=[0.05, 0.01, 0.005, 0.001], form='*'):
         if pv<pv_thres[-1]:
             s = r'$\rho$ = %.3f'%rho+ '\np < %.3f'%pv_thres[-1]
         else:
-            s = r'$\rho$ = %.3f'%rho+ '\np = %.3f'%pv
+            s = corr_letter+' = %.3f'%rho+ '\np = %.3f'%pv
     return s
 #
 #
