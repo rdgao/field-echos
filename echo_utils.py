@@ -442,10 +442,10 @@ def sig_str(rho, pv, pv_thres=[0.05, 0.01, 0.005, 0.001], form='*', corr_letter=
     str
     """
     if form is '*':
-        s = r'$\rho$ = %.3f '%rho + np.sum(pv<=np.array(pv_thres))*'*'
+        s = corr_letter+' = %.3f '%rho + np.sum(pv<=np.array(pv_thres))*'*'
     else:
         if pv<pv_thres[-1]:
-            s = r'$\rho$ = %.3f'%rho+ '\np < %.3f'%pv_thres[-1]
+            s = corr_letter+' = %.3f'%rho+ '\np < %.3f'%pv_thres[-1]
         else:
             s = corr_letter+' = %.3f'%rho+ '\np = %.3f'%pv
     return s
