@@ -379,13 +379,13 @@ def compute_weighted_average(df_feature, df_W, w_thresh=0.5, axis=0, method='wei
     elif method is 'thresh_weighted':
         # method 2: weighted average of suprathreshold parcels
         #    this will approach method 1 as w_thresh approaches 0
-        thresh_mat = df_W>=w_thres
+        thresh_mat = df_W>=w_thresh
         return (df_feature*df_W)[thresh_mat].sum(axis=axis)/df_W[thresh_mat].sum(axis=axis)
 
     elif method is 'thresh_mean':
         # method 3: simple average of suprathreshold parcels
         #    not sure if it makes sense to weight all suprathreshold parcels equally
-        thresh_mat = df_W>=w_thres
+        thresh_mat = df_W>=w_thresh
         return np.nanmean((df_feature*df_W)[thresh_mat],axis=axis)
 
 
