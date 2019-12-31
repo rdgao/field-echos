@@ -335,8 +335,8 @@ def plot_MMP(data, save_file=None, minmax=None, thresh=None, cmap='inferno', alp
     mmp_labels, ctab, names = ni.freesurfer.read_annot(annot_file)
 
     if len(names)-len(data)==1:
-        # short one label cuz 0 is unassigned in the data, fill with -1
-        data_app = np.hstack((-1,data))
+        # short one label cuz 0 is unassigned in the data, fill with big negative number
+        data_app = np.hstack((-1e6,data))
         vtx_data = data_app[mmp_labels]
     else:
         vtx_data = data[mmp_labels]
