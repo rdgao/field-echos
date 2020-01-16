@@ -3,7 +3,7 @@ import numpy as np
 import scipy as sp
 import pandas as pd
 import nibabel as ni
-from fooof import FOOOFGroup, synth
+from fooof import FOOOFGroup, sim
 import matplotlib.pyplot as plt
 from surfer import Brain
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes
@@ -31,7 +31,7 @@ def return_fooof_regen(fg):
     Takes a fitted FOOOFGroup model and returns the fitted (modeled) PSDs in
     linear power.
     """
-    f_regen = synth.gen_freqs(fg.freq_range, fg.freq_res)
+    f_regen = sim.gen_freqs(fg.freq_range, fg.freq_res)
     n_psds = fg.get_params('error').shape[0]
     psds_regen = 10**np.array([fg.get_fooof(ind,regenerate=True).fooofed_spectrum_ for ind in range(n_psds)])
     return f_regen, psds_regen
