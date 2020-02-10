@@ -449,6 +449,28 @@ def sig_str(rho, pv, pv_thres=[0.05, 0.01, 0.005, 0.001], form='*', corr_letter=
         else:
             s = corr_letter+' = %.3f'%rho+ '\np = %.3f'%pv
     return s
+
+
+def print_gene_list(df, filename):
+    """ Print list or dataframe indices into a textfile, all capital.
+
+    Parameters
+    ----------
+    df :
+        dataframe or list to be printed
+    filename :
+        fullpath name for where to save textfile
+    """
+    # print list of genes (or any indices) in a dataframe into a textfile, or print elements of a list
+    if type(df) is type([]):
+        # if input is a list
+        gene_list = df
+    else:
+        # if input is actually a dataframe
+        gene_list = [l.upper() for l in df.index.values.tolist()]
+    with open(filename, 'w') as f:
+        for item in gene_list:
+            f.write("%s\n" % item)
 #
 #
 # def plot_MMP(data, save_file, minmax=None, cmap='inferno', alpha=1, add_border=False):
