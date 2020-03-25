@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from surfer import Brain
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 from seaborn import despine
-from scipy.stats import spearmanr
+from scipy.stats import pearsonr, spearmanr, linregress
 
 def makedir(base, itm='/', timestamp=True):
     """
@@ -471,6 +471,85 @@ def print_gene_list(df, filename):
     with open(filename, 'w') as f:
         for item in gene_list:
             f.write("%s\n" % item)
+
+def get_residuals(x, df_y):
+    """Return residue of y regressed on x (err = y_bar - x)"""
+    df_y_res = df_y.copy()
+    coeffs = []
+    for i_col, col in df_y_res.iteritems():
+        reg_coeff = linregress(x, col.values)
+        df_y_res[i_col] = col.values - (reg_coeff[0]*x+reg_coeff[1])
+        coeffs.append(reg_coeff)
+
+    return df_y_res, np.array(coeffs)
+
+def compute_all_corr(x, df_y, method='spearman'):
+    """Compute correlation between x and all columns of y, save rho and pv into df"""
+    df_corr = pd.DataFrame(index=df_y.columns, columns=['rho', 'pv'])
+    for i_col, col in df_y.iteritems():
+        if method is 'spearman':
+            rho, pv = spearmanr(x, col.values, nan_policy='omit')
+        elif method is 'pearson':
+            rho, pv = pearsonr(x, col.values)
+        df_corr.loc[i_col] = rho, pv
+    return df_corr
+
+def run_emp_surrogate(map_emp, map_surr, df_map_gene, outfile):
+    # run it with spearman correlation
+    #    maybe there's a speed up with PLS?
+    df_emp_corr = compute_all_corr(map_emp, df_map_gene)
+    n_genes, n_surr = len(df_map_gene.columns), map_surr.shape[1]
+    all_surr_corr = np.zeros((n_genes, n_surr))
+    for i_s in range(n_surr):
+        print(i_s, end='|')
+        all_surr_corr[:,i_s] = compute_all_corr(map_surr[:,i_s], df_map_gene)['rho'].values
+
+    df_surr_corr = pd.DataFrame(all_surr_corr, index=df_emp_corr.index)
+    df_all_corr = pd.concat((df_emp_corr, df_surr_corr), axis=1)
+    df_all_corr.to_csv(outfile)
+    return df_all_corr
+
+
+def prep_goea(taxid=9606, prop_counts=True, alpha=0.05, method='fdr_bh'):
+    ### DOWNLOAD AND LOAD ALL THE GENE STUFF for GOEA
+    # download ontology
+    from goatools.base import download_go_basic_obo
+    obo_fname = download_go_basic_obo()
+
+    # download associations
+    from goatools.base import download_ncbi_associations
+    fin_gene2go = download_ncbi_associations()
+
+    # load ontology
+    from goatools.obo_parser import GODag
+    obodag = GODag("go-basic.obo")
+
+    # load human gene ontology
+    from goatools.anno.genetogo_reader import Gene2GoReader
+    objanno = Gene2GoReader(fin_gene2go, taxids=[taxid]) #9606 is taxonomy ID for homo sapiens
+    ns2assoc = objanno.get_ns2assc()
+    for nspc, id2gos in ns2assoc.items():
+        print("{NS} {N:,} annotated human genes".format(NS=nspc, N=len(id2gos)))
+
+    from goatools.goea.go_enrichment_ns import GOEnrichmentStudyNS
+    #pop_ids = pd.read_csv('../data/df_human_geneinfo.csv',index_col=0)['GeneID'].to_list()
+    df_genehumans = pd.read_csv('../data/df_human_geneinfo.csv',index_col=0)
+    goeaobj = GOEnrichmentStudyNS(df_genehumans['GeneID'].to_list(), ns2assoc, obodag, propagate_counts=prop_counts, alpha=alpha, methods=[method])
+
+    # get symbol to ID translation dictionary to get overexpressed IDs
+    symbol2id = dict(zip(df_genehumans['Symbol'].str.upper(), df_genehumans['GeneID']))
+
+    return goeaobj, symbol2id
+
+### ---------- Functions for fitting ACF --------
+def exp2_func(t, tau1, tau2, A1, A2, B):
+    return A1*np.exp(-t/tau1) + A2*np.exp(-t/tau2) + B
+
+def exp_lt_func(t, tau, A, B):
+    return A*(np.exp(-t/tau)+B)
+
+
+
 #
 #
 # def plot_MMP(data, save_file, minmax=None, cmap='inferno', alpha=1, add_border=False):
