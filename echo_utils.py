@@ -388,6 +388,12 @@ def compute_weighted_average(df_feature, df_W, w_thresh=0.5, axis=0, method='wei
         thresh_mat = df_W>=w_thresh
         return np.nanmean((df_feature*df_W)[thresh_mat],axis=axis)
 
+def compute_perm_corr(x, y, y_nulls, corr_method='spearman'):
+    corr_func = spearmanr if corr_method is 'spearman' else pearsonr
+    rho, pv = corr_func(x,y)
+    rho_null = np.array([spearmanr(x, n_)[0] for n_ in y_nulls])
+    pv_perm = (abs(rho)<abs(rho_null)).sum()/y_nulls.shape[0]
+    return rho, pv, pv_perm, rho_null
 
 def perm_spearman(x, y, n_perms=1000, resamp='shuffle', tails='two'):
     """Compute permutation statistic on spearman correlation.
@@ -540,6 +546,13 @@ def prep_goea(taxid=9606, prop_counts=True, alpha=0.05, method='fdr_bh'):
     symbol2id = dict(zip(df_genehumans['Symbol'].str.upper(), df_genehumans['GeneID']))
 
     return goeaobj, symbol2id
+
+def find_gene_ids(symbol_list, symbol2id_dict, makeupper=True):
+    # grab gene IDs from their symbols
+    if makeupper:
+        return [symbol2id_dict[g.upper()] for g in symbol_list]
+    else:
+        return [symbol2id_dict[g] for g in symbol_list]
 
 ### ---------- Functions for fitting ACF --------
 def exp2_func(t, tau1, tau2, A1, A2, B):
