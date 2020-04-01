@@ -515,7 +515,7 @@ def run_emp_surrogate(map_emp, map_surr, df_map_gene, outfile):
     df_all_corr.to_csv(outfile)
     return df_all_corr
 
-
+### gene ontology analysis functions
 def prep_goea(taxid=9606, prop_counts=True, alpha=0.05, method='fdr_bh'):
     ### DOWNLOAD AND LOAD ALL THE GENE STUFF for GOEA
     # download ontology
@@ -553,6 +553,33 @@ def find_gene_ids(symbol_list, symbol2id_dict, makeupper=True):
         return [symbol2id_dict[g.upper()] for g in symbol_list]
     else:
         return [symbol2id_dict[g] for g in symbol_list]
+
+def run_goea(df_pls, symbol2id_dict, goea_obj, g_alpha=0.05, posneg='all', go_alpha=0.05):
+    if posneg is 'all':
+        enriched_genes = df_pls[(df_pls['pv']<g_alpha)].index.tolist()
+    elif posneg is 'pos':
+        enriched_genes = df_pls[(df_pls['pv']<g_alpha) & (df_pls['w']>0)].index.tolist()
+    elif posneg is 'neg':
+        enriched_genes = df_pls[(df_pls['pv']<g_alpha) & (df_pls['w']<0)].index.tolist()
+
+    # convert to gene IDs & run GOEA
+    enriched_ids = find_gene_ids(enriched_genes, symbol2id_dict)
+    goea_all = goea_obj.run_study(enriched_ids)
+
+    # collect and return dfs
+
+    # print relevant info from significant
+    df_goea=pd.DataFrame([[go.GO, go.enrichment, go.NS, go.depth, go.name, go.study_count, go.pop_count, go.ratio_in_study[0]/go.ratio_in_study[1], go.p_fdr_bh] for go in goea_all],
+                        columns = ['ID', 'enrichment', 'branch', 'depth', 'name', 'n_enriched', 'n_in_cat', 'ratio_in_study', 'pv'])
+    # also return significant ones b/c I'm too lazy to do this outside
+    df_goea_sig = df_goea[df_goea['pv']<go_alpha]
+
+    # return the original data objects incase
+    goea_results_sig = [r for r in goea_all if r.p_fdr_bh < go_alpha]
+
+    return df_goea, df_goea_sig, goea_results_sig, enriched_genes
+
+
 
 ### ---------- Functions for fitting ACF --------
 def exp2_func(t, tau1, tau2, A1, A2, B):
