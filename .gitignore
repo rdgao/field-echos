@@ -13,3 +13,7 @@
 
 # Ignore results
 results/*
+
+# Ignore gene ontology files because they're big
+gene2go
+go-basic.obo
