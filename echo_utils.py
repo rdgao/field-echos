@@ -478,8 +478,33 @@ def print_gene_list(df, filename):
         for item in gene_list:
             f.write("%s\n" % item)
 
+def print_go_genes(go_item, id2symbol_dict, print_pop_item = False):
+    print('------', go_item.name, '--------')
+    print('%i enriched genes in GO item:'%len(go_item.study_items))
+    [print(g, end=', ') for g in np.sort([id2symbol_dict[gid] for gid in go_item.study_items])]
+    print('-----')
+    if print_pop_item:
+        print('%i genes in GO item from population:'%len(go_item.pop_items))
+        [print(g, end=', ') for g in np.sort([id2symbol_dict[gid] for gid in go_item.pop_items])]
+
+def plot_go_items(df_goea_plot, n_go=None, plot_order=None):
+    if n_go is None: n_go = len(df_goea_plot)
+    if plot_order is None: plot_order = range(n_go)
+    plt.barh(n_go-np.arange(n_go), df_goea_plot.iloc[plot_order]['n_enriched']/df_goea_plot.iloc[plot_order]['n_in_cat'], height=0.05, color='k', alpha=0.8)
+    plt.scatter(df_goea_plot.iloc[plot_order]['n_enriched']/df_goea_plot.iloc[plot_order]['n_in_cat'], n_go-np.arange(n_go), s=300, marker='o', ec='k', c=df_goea_plot.iloc[:n_go]['n_enriched'], cmap='BuGn', zorder=10)
+    plt.yticks(range(1,n_go+1),df_goea_plot.iloc[plot_order]['name'][::-1], fontsize=14)
+    plt.xlabel('% of genes enriched\nin GO item');
+    plt.colorbar(fraction=0.1, pad=0.2, shrink=0.8, aspect=10)
+
+    for i_go, (_, go) in enumerate(df_goea_plot.iloc[plot_order].iterrows()):
+        plt.text(go['n_enriched']/go['n_in_cat']+plt.xlim()[1]*0.1, n_go-i_go-0.25, '*'*sum(go['pv']<np.array([0.05, 0.01, 0.005, 0.001])), fontsize=20)
+
+    despine()
+    plt.tight_layout()
+
+
 def get_residuals(x, df_y):
-    """Return residue of y regressed on x (err = y_bar - x)"""
+    """Return residue of y regressed on x (err = y_bar - y)"""
     df_y_res = df_y.copy()
     coeffs = []
     for i_col, col in df_y_res.iteritems():
