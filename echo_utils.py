@@ -541,7 +541,7 @@ def run_emp_surrogate(map_emp, map_surr, df_map_gene, outfile):
     return df_all_corr
 
 ### gene ontology analysis functions
-def prep_goea(taxid=9606, prop_counts=True, alpha=0.05, method='fdr_bh'):
+def prep_goea(taxid=9606, prop_counts=True, alpha=0.05, method='fdr_bh', ref_list=None):
     ### DOWNLOAD AND LOAD ALL THE GENE STUFF for GOEA
     # download ontology
     from goatools.base import download_go_basic_obo
@@ -565,7 +565,12 @@ def prep_goea(taxid=9606, prop_counts=True, alpha=0.05, method='fdr_bh'):
     from goatools.goea.go_enrichment_ns import GOEnrichmentStudyNS
     #pop_ids = pd.read_csv('../data/df_human_geneinfo.csv',index_col=0)['GeneID'].to_list()
     df_genehumans = pd.read_csv('../data/df_human_geneinfo.csv',index_col=0)
-    goeaobj = GOEnrichmentStudyNS(df_genehumans['GeneID'].to_list(), ns2assoc, obodag, propagate_counts=prop_counts, alpha=alpha, methods=[method])
+
+    # if no reference list is given, default to all genes in ABHA
+    if ref_list is None:
+        ref_list = df_genehumans['GeneID'].to_list()
+
+    goeaobj = GOEnrichmentStudyNS(ref_list, ns2assoc, obodag, propagate_counts=prop_counts, alpha=alpha, methods=[method])
 
     # get symbol to ID translation dictionary to get overexpressed IDs
     symbol2id = dict(zip(df_genehumans['Symbol'].str.upper(), df_genehumans['GeneID']))
