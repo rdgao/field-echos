@@ -585,6 +585,28 @@ def find_gene_ids(symbol_list, symbol2id_dict, makeupper=True):
         return [symbol2id_dict[g] for g in symbol_list]
 
 def run_goea(df_pls, symbol2id_dict, goea_obj, g_alpha=0.05, posneg='all', go_alpha=0.05):
+    """ Run GOEA based on dataframe of genes and associated p-values.
+
+    Parameters
+    ----------
+    df_pls : type
+        Description of parameter `df_pls`.
+    symbol2id_dict : type
+        Description of parameter `symbol2id_dict`.
+    goea_obj : type
+        Description of parameter `goea_obj`.
+    g_alpha : type
+        Description of parameter `g_alpha`.
+    posneg : type
+        Description of parameter `posneg`.
+    go_alpha : type
+        Description of parameter `go_alpha`.
+
+    Returns
+    -------
+    df_goea, df_goea_sig, goea_results_sig, enriched_genes
+    """
+
     if posneg is 'all':
         enriched_genes = df_pls[(df_pls['pv']<g_alpha)].index.tolist()
     elif posneg is 'pos':
@@ -599,8 +621,10 @@ def run_goea(df_pls, symbol2id_dict, goea_obj, g_alpha=0.05, posneg='all', go_al
     # collect and return dfs
 
     # print relevant info from significant
-    df_goea=pd.DataFrame([[go.GO, go.enrichment, go.NS, go.depth, go.name, go.study_count, go.pop_count, go.ratio_in_study[0]/go.ratio_in_study[1], go.p_fdr_bh] for go in goea_all],
-                        columns = ['ID', 'enrichment', 'branch', 'depth', 'name', 'n_enriched', 'n_in_cat', 'ratio_in_study', 'pv'])
+    df_goea=pd.DataFrame([[go.GO, go.enrichment, go.NS, go.depth, go.name, go.study_count, go.pop_count,
+                        go.ratio_in_study[0]/go.ratio_in_study[1], go.ratio_in_pop[0]/go.ratio_in_pop[1],
+                        (go.ratio_in_study[0]/go.ratio_in_study[1])/(go.ratio_in_pop[0]/go.ratio_in_pop[1]), go.p_fdr_bh] for go in goea_all],
+                        columns = ['ID', 'enrichment', 'branch', 'depth', 'name', 'n_enriched', 'n_in_cat', 'ratio_in_study', 'ratio_in_pop', 'enrichment_ratio', 'pv'])
     # also return significant ones b/c I'm too lazy to do this outside
     df_goea_sig = df_goea[df_goea['pv']<go_alpha]
 
