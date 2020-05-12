@@ -321,6 +321,25 @@ def ecog_gene_corr(df_combined, df_anat, avg_dev_func, ephys_feat='tau', anat_fe
     rho_elec, pv_elec = sp.stats.spearmanr(ephys_elec, anat_elec, nan_policy='omit')
     return ephys_avg, ephys_dev, anat_avg, (rho_agg, pv_agg), ephys_elec, anat_elec, (rho_elec, pv_elec)
 
+def set_ticks_truncate_axes(xt=None, yt=None, left=True, right=True):
+    # https://matplotlib.org/3.1.1/gallery/ticks_and_spines/spines_bounds.html
+    # https://matplotlib.org/3.2.1/gallery/ticks_and_spines/spine_placement_demo.html
+    #set_ticks_truncate_axes(xt=([-2,0,2,4],None), yt=(np.log10(np.arange(10,60,10)), (np.arange(10, 60, 10)).astype(int)))
+    if xt is not None:
+        if xt[1] is None:
+            plt.xticks(xt[0],xt[0])
+        else:
+            plt.xticks(xt[0],xt[1])
+
+    if yt is not None:
+        if yt[1] is None:
+            plt.yticks(yt[0],yt[0])
+        else:
+            plt.yticks(yt[0],yt[1])
+
+    if left: plt.gca().spines['bottom'].set_bounds(plt.xticks()[0][0], plt.xticks()[0][-1])
+    if right: plt.gca().spines['left'].set_bounds(plt.yticks()[0][0], plt.yticks()[0][-1])
+
 
 def plot_MMP(data, save_file=None, minmax=None, thresh=None, cmap='inferno', alpha=1, add_border=False, bp=3, title=None):
     """
