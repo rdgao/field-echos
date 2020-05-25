@@ -1,0 +1,32 @@
+,ID,enrichment,branch,depth,name,n_enriched,n_in_cat,ratio_in_study,ratio_in_pop,enrichment_ratio,pv
+0,GO:0098660,e,BP,6,inorganic ion transmembrane transport,33,192,0.199,0.079,2.515,0.002
+1,GO:0098662,e,BP,7,inorganic cation transmembrane transport,28,162,0.169,0.067,2.529,0.007
+2,GO:0098655,e,BP,6,cation transmembrane transport,29,174,0.175,0.072,2.439,0.007
+3,GO:0034220,e,BP,5,ion transmembrane transport,35,249,0.211,0.103,2.057,0.030
+4,GO:0030001,e,BP,6,metal ion transport,28,183,0.169,0.075,2.239,0.036
+5,GO:0071805,e,BP,8,potassium ion transmembrane transport,16,75,0.096,0.031,3.122,0.036
+6,GO:0006813,e,BP,7,potassium ion transport,16,76,0.096,0.031,3.081,0.037
+7913,GO:1902495,e,CC,3,transmembrane transporter complex,26,163,0.157,0.067,2.334,0.009
+7914,GO:1990351,e,CC,2,transporter complex,26,163,0.157,0.067,2.334,0.009
+7915,GO:0034702,e,CC,4,ion channel complex,25,155,0.151,0.064,2.360,0.009
+7916,GO:0098796,e,CC,2,membrane protein complex,32,227,0.193,0.093,2.063,0.009
+7917,GO:0034703,e,CC,5,cation channel complex,20,123,0.120,0.051,2.379,0.030
+8799,GO:0005244,e,MF,7,voltage-gated ion channel activity,20,95,0.120,0.039,3.081,0.002
+8800,GO:0022832,e,MF,6,voltage-gated channel activity,20,95,0.120,0.039,3.081,0.002
+8801,GO:0046873,e,MF,6,metal ion transmembrane transporter activity,28,167,0.169,0.069,2.453,0.002
+8802,GO:0022890,e,MF,5,inorganic cation transmembrane transporter activity,30,196,0.181,0.081,2.240,0.005
+8803,GO:0005216,e,MF,5,ion channel activity,28,179,0.169,0.074,2.289,0.006
+8804,GO:0008324,e,MF,4,cation transmembrane transporter activity,30,202,0.181,0.083,2.173,0.006
+8805,GO:0015318,e,MF,3,inorganic molecular entity transmembrane transporter activity,35,251,0.211,0.103,2.040,0.006
+8806,GO:0015077,e,MF,6,monovalent inorganic cation transmembrane transporter activity,22,127,0.133,0.052,2.535,0.006
+8807,GO:0015075,e,MF,3,ion transmembrane transporter activity,35,253,0.211,0.104,2.024,0.006
+8808,GO:0015079,e,MF,7,potassium ion transmembrane transporter activity,16,77,0.096,0.032,3.041,0.006
+8809,GO:0005215,e,MF,1,transporter activity,39,303,0.235,0.125,1.883,0.006
+8810,GO:0022857,e,MF,2,transmembrane transporter activity,37,284,0.223,0.117,1.906,0.006
+8811,GO:0022836,e,MF,5,gated channel activity,25,159,0.151,0.065,2.301,0.006
+8812,GO:0015267,e,MF,4,channel activity,28,187,0.169,0.077,2.191,0.006
+8813,GO:0022803,e,MF,3,passive transmembrane transporter activity,28,187,0.169,0.077,2.191,0.006
+8814,GO:0005249,e,MF,9,voltage-gated potassium channel activity,12,48,0.072,0.020,3.658,0.006
+8815,GO:0005261,e,MF,6,cation channel activity,23,143,0.139,0.059,2.353,0.009
+8816,GO:0005267,e,MF,8,potassium channel activity,14,67,0.084,0.028,3.058,0.011
+8817,GO:0022843,e,MF,8,voltage-gated cation channel activity,15,80,0.090,0.033,2.744,0.022

@@ -1,0 +1,2 @@
+,ID,enrichment,branch,depth,name,n_enriched,n_in_cat,ratio_in_study,ratio_in_pop,enrichment_ratio,pv
+8799,GO:0008195,e,MF,6,phosphatidate phosphatase activity,5,6,0.034,0.002,13.864,0.007

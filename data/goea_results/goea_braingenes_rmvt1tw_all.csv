@@ -1,0 +1,7 @@
+,ID,enrichment,branch,depth,name,n_enriched,n_in_cat,ratio_in_study,ratio_in_pop,enrichment_ratio,pv
+7913,GO:0034702,e,CC,4,ion channel complex,39,155,0.125,0.064,1.959,0.008
+7914,GO:1902495,e,CC,3,transmembrane transporter complex,40,163,0.128,0.067,1.910,0.008
+7915,GO:1990351,e,CC,2,transporter complex,40,163,0.128,0.067,1.910,0.008
+7916,GO:0098982,e,CC,4,GABA-ergic synapse,17,53,0.054,0.022,2.497,0.038
+7917,GO:1902711,e,CC,4,GABA-A receptor complex,7,12,0.022,0.005,4.541,0.038
+7918,GO:0034707,e,CC,5,chloride channel complex,10,23,0.032,0.009,3.385,0.038

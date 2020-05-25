@@ -1,0 +1,101 @@
+,ID,enrichment,branch,depth,name,n_enriched,n_in_cat,ratio_in_study,ratio_in_pop,enrichment_ratio,pv
+0,GO:0006955,e,BP,2,immune response,101,765,0.070,0.042,1.647,0.001
+1,GO:0045087,e,BP,6,innate immune response,59,375,0.041,0.021,1.963,0.001
+2,GO:0002274,e,BP,4,myeloid leukocyte activation,74,516,0.051,0.028,1.789,0.001
+3,GO:0002376,e,BP,1,immune system process,200,1804,0.138,0.100,1.383,0.001
+4,GO:0002684,e,BP,4,positive regulation of immune system process,105,815,0.072,0.045,1.607,0.001
+5,GO:0050865,e,BP,4,regulation of cell activation,69,484,0.048,0.027,1.778,0.002
+6,GO:0045321,e,BP,3,leukocyte activation,99,771,0.068,0.043,1.602,0.002
+7,GO:0042116,e,BP,5,macrophage activation,14,42,0.010,0.002,4.158,0.002
+8,GO:0050776,e,BP,4,regulation of immune response,97,754,0.067,0.042,1.605,0.002
+9,GO:0002694,e,BP,5,regulation of leukocyte activation,65,450,0.045,0.025,1.802,0.002
+10,GO:0050670,e,BP,7,regulation of lymphocyte proliferation,33,180,0.023,0.010,2.287,0.004
+11,GO:0002682,e,BP,3,regulation of immune system process,148,1294,0.102,0.071,1.427,0.005
+12,GO:0070663,e,BP,5,regulation of leukocyte proliferation,34,188,0.023,0.010,2.256,0.005
+13,GO:0002253,e,BP,6,activation of immune response,51,334,0.035,0.018,1.905,0.005
+14,GO:0032944,e,BP,6,regulation of mononuclear cell proliferation,33,181,0.023,0.010,2.274,0.006
+15,GO:0150146,e,BP,5,cell junction disassembly,7,12,0.005,0.001,7.277,0.006
+16,GO:0050778,e,BP,5,positive regulation of immune response,71,522,0.049,0.029,1.697,0.006
+17,GO:0006898,e,BP,6,receptor-mediated endocytosis,30,163,0.021,0.009,2.296,0.007
+18,GO:0030833,e,BP,10,regulation of actin filament polymerization,29,156,0.020,0.009,2.319,0.008
+19,GO:0001775,e,BP,2,cell activation,106,879,0.073,0.049,1.504,0.008
+20,GO:0051249,e,BP,6,regulation of lymphocyte activation,55,380,0.038,0.021,1.806,0.009
+21,GO:0034314,e,BP,13,Arp2/3 complex-mediated actin nucleation,8,17,0.006,0.001,5.871,0.009
+22,GO:0002252,e,BP,2,immune effector process,100,820,0.069,0.045,1.521,0.009
+23,GO:0050866,e,BP,5,negative regulation of cell activation,31,172,0.021,0.009,2.248,0.009
+24,GO:0001774,e,BP,6,microglial cell activation,10,27,0.007,0.001,4.620,0.009
+25,GO:0045010,e,BP,12,actin nucleation,10,27,0.007,0.001,4.620,0.009
+26,GO:0002269,e,BP,4,leukocyte activation involved in inflammatory response,10,27,0.007,0.001,4.620,0.009
+27,GO:0032940,e,BP,5,secretion by cell,105,879,0.072,0.049,1.490,0.011
+28,GO:0045055,e,BP,7,regulated exocytosis,78,609,0.054,0.034,1.598,0.012
+29,GO:0140352,e,BP,4,export from cell,109,922,0.075,0.051,1.475,0.012
+30,GO:0002697,e,BP,4,regulation of immune effector process,50,349,0.034,0.019,1.787,0.019
+31,GO:0032103,e,BP,5,positive regulation of response to external stimulus,58,425,0.040,0.023,1.702,0.020
+32,GO:0002366,e,BP,4,leukocyte activation involved in immune response,69,531,0.048,0.029,1.621,0.020
+33,GO:0006887,e,BP,6,exocytosis,84,681,0.058,0.038,1.539,0.021
+34,GO:0098754,e,BP,1,detoxification,22,112,0.015,0.006,2.450,0.021
+35,GO:0051046,e,BP,5,regulation of secretion,90,746,0.062,0.041,1.505,0.024
+36,GO:0050863,e,BP,7,regulation of T cell activation,42,281,0.029,0.016,1.865,0.025
+37,GO:0098883,e,BP,6,synapse pruning,6,11,0.004,0.001,6.805,0.025
+38,GO:1903530,e,BP,6,regulation of secretion by cell,85,697,0.059,0.038,1.521,0.025
+39,GO:0002263,e,BP,3,cell activation involved in immune response,69,535,0.048,0.030,1.609,0.026
+40,GO:0048584,e,BP,4,positive regulation of response to stimulus,211,2050,0.145,0.113,1.284,0.027
+41,GO:0043299,e,BP,8,leukocyte degranulation,60,452,0.041,0.025,1.656,0.027
+42,GO:0038096,e,BP,10,Fc-gamma receptor signaling pathway involved in phagocytosis,16,70,0.011,0.004,2.851,0.027
+43,GO:0002433,e,BP,7,immune response-regulating cell surface receptor signaling pathway involved in phagocytosis,16,70,0.011,0.004,2.851,0.027
+44,GO:0002695,e,BP,6,negative regulation of leukocyte activation,27,152,0.019,0.008,2.216,0.029
+45,GO:0016192,e,BP,4,vesicle-mediated transport,163,1529,0.112,0.084,1.330,0.030
+46,GO:0002275,e,BP,5,myeloid cell activation involved in immune response,61,464,0.042,0.026,1.640,0.030
+47,GO:0038094,e,BP,8,Fc-gamma receptor signaling pathway,16,71,0.011,0.004,2.811,0.030
+48,GO:0002696,e,BP,6,positive regulation of leukocyte activation,41,278,0.028,0.015,1.840,0.031
+49,GO:0032722,e,BP,8,positive regulation of chemokine production,13,51,0.009,0.003,3.180,0.033
+50,GO:0002431,e,BP,9,Fc receptor mediated stimulatory signaling pathway,16,72,0.011,0.004,2.772,0.033
+51,GO:0009607,e,BP,2,response to biotic stimulus,107,932,0.074,0.051,1.432,0.033
+52,GO:0043207,e,BP,3,response to external biotic stimulus,104,904,0.072,0.050,1.435,0.035
+53,GO:0016322,e,BP,6,neuron remodeling,6,12,0.004,0.001,6.238,0.035
+54,GO:0008064,e,BP,9,regulation of actin polymerization or depolymerization,29,172,0.020,0.009,2.103,0.037
+55,GO:0030832,e,BP,8,regulation of actin filament length,29,173,0.020,0.010,2.091,0.038
+56,GO:1903037,e,BP,6,regulation of leukocyte cell-cell adhesion,40,274,0.028,0.015,1.821,0.040
+57,GO:0032930,e,BP,8,positive regulation of superoxide anion generation,7,17,0.005,0.001,5.137,0.041
+58,GO:0042129,e,BP,8,regulation of T cell proliferation,24,136,0.017,0.008,2.202,0.042
+59,GO:0055069,e,BP,9,zinc ion homeostasis,9,28,0.006,0.002,4.010,0.045
+60,GO:0042534,e,BP,9,regulation of tumor necrosis factor biosynthetic process,9,28,0.006,0.002,4.010,0.045
+61,GO:0061900,e,BP,3,glial cell activation,10,34,0.007,0.002,3.669,0.046
+62,GO:0002283,e,BP,7,neutrophil activation involved in immune response,57,437,0.039,0.024,1.627,0.046
+63,GO:0042119,e,BP,6,neutrophil activation,58,445,0.040,0.025,1.626,0.049
+5392,GO:0051252,p,BP,6,regulation of RNA metabolic process,191,3386,0.132,0.187,0.704,0.000
+5393,GO:2000112,p,BP,6,regulation of cellular macromolecule biosynthetic process,200,3508,0.138,0.194,0.711,0.000
+5394,GO:2001141,p,BP,7,regulation of RNA biosynthetic process,177,3138,0.122,0.173,0.704,0.000
+5395,GO:0019219,p,BP,5,regulation of nucleobase-containing compound metabolic process,212,3629,0.146,0.200,0.729,0.000
+5396,GO:1903506,p,BP,8,regulation of nucleic acid-templated transcription,177,3134,0.122,0.173,0.705,0.000
+5397,GO:0010556,p,BP,5,regulation of macromolecule biosynthetic process,213,3624,0.147,0.200,0.733,0.000
+5398,GO:0006355,p,BP,9,"regulation of transcription, DNA-templated",176,3080,0.121,0.170,0.713,0.000
+5399,GO:0010468,p,BP,5,regulation of gene expression,268,4342,0.185,0.240,0.770,0.000
+5400,GO:0031326,p,BP,5,regulation of cellular biosynthetic process,228,3759,0.157,0.208,0.757,0.001
+5401,GO:0080090,p,BP,4,regulation of primary metabolic process,353,5423,0.243,0.299,0.812,0.001
+5402,GO:0009889,p,BP,4,regulation of biosynthetic process,236,3830,0.163,0.211,0.769,0.001
+5403,GO:0060255,p,BP,4,regulation of macromolecule metabolic process,383,5767,0.264,0.318,0.829,0.002
+5404,GO:0051171,p,BP,4,regulation of nitrogen compound metabolic process,345,5255,0.238,0.290,0.819,0.002
+5405,GO:0019222,p,BP,3,regulation of metabolic process,424,6249,0.292,0.345,0.846,0.005
+5406,GO:0031323,p,BP,4,regulation of cellular metabolic process,377,5619,0.260,0.310,0.837,0.006
+5407,GO:0090304,p,BP,5,nucleic acid metabolic process,124,2093,0.085,0.116,0.739,0.029
+15305,GO:0005887,e,CC,4,integral component of plasma membrane,142,1250,0.098,0.069,1.417,0.016
+15306,GO:0031226,e,CC,3,intrinsic component of plasma membrane,148,1323,0.102,0.073,1.396,0.016
+15307,GO:0005885,e,CC,2,Arp2/3 protein complex,6,10,0.004,0.001,7.485,0.017
+15308,GO:0030666,e,CC,6,endocytic vesicle membrane,27,147,0.019,0.008,2.291,0.017
+15309,GO:0070062,e,CC,6,extracellular exosome,199,1932,0.137,0.107,1.285,0.042
+15310,GO:1903561,e,CC,5,extracellular vesicle,200,1951,0.138,0.108,1.279,0.042
+15311,GO:0043230,e,CC,3,extracellular organelle,200,1952,0.138,0.108,1.278,0.042
+15312,GO:0016021,e,CC,3,integral component of membrane,396,4213,0.273,0.233,1.173,0.042
+15313,GO:0031224,e,CC,2,intrinsic component of membrane,407,4359,0.280,0.241,1.165,0.043
+15314,GO:0098797,e,CC,3,plasma membrane protein complex,66,528,0.045,0.029,1.559,0.043
+15981,GO:0005634,p,CC,5,nucleus,306,4754,0.211,0.262,0.803,0.004
+15982,GO:0043229,p,CC,3,intracellular organelle,660,9095,0.455,0.502,0.905,0.042
+15983,GO:0043231,p,CC,4,intracellular membrane-bounded organelle,541,7574,0.373,0.418,0.891,0.043
+15984,GO:0000785,p,CC,2,chromatin,50,986,0.034,0.054,0.633,0.043
+18387,GO:0003676,p,MF,3,nucleic acid binding,206,3724,0.142,0.206,0.690,0.000
+18388,GO:0097159,p,MF,2,organic cyclic compound binding,347,5550,0.239,0.306,0.780,0.000
+18389,GO:1901363,p,MF,2,heterocyclic compound binding,342,5478,0.236,0.302,0.779,0.000
+18390,GO:0003677,p,MF,4,DNA binding,125,2270,0.086,0.125,0.687,0.001
+18391,GO:0140110,p,MF,1,transcription regulator activity,78,1531,0.054,0.085,0.636,0.004
+18392,GO:0003700,p,MF,2,DNA-binding transcription factor activity,54,1138,0.037,0.063,0.592,0.008
