@@ -1,0 +1,56 @@
+,ID,enrichment,branch,depth,name,n_enriched,n_in_cat,ratio_in_study,ratio_in_pop,enrichment_ratio,pv
+0,GO:0055085,e,BP,4,transmembrane transport,209,1150,0.089,0.063,1.398,0.003
+1,GO:0034220,e,BP,5,ion transmembrane transport,156,812,0.066,0.045,1.478,0.003
+2,GO:0006811,e,BP,4,ion transport,212,1194,0.090,0.066,1.366,0.006
+3,GO:0071805,e,BP,8,potassium ion transmembrane transport,40,147,0.017,0.008,2.093,0.013
+4,GO:0006813,e,BP,7,potassium ion transport,41,156,0.017,0.009,2.022,0.018
+5,GO:0006820,e,BP,5,anion transport,103,523,0.044,0.029,1.515,0.023
+6,GO:0098660,e,BP,6,inorganic ion transmembrane transport,113,589,0.048,0.033,1.476,0.024
+7,GO:0030001,e,BP,6,metal ion transport,110,572,0.047,0.032,1.479,0.027
+8,GO:0006814,e,BP,7,sodium ion transport,36,135,0.015,0.007,2.051,0.030
+9,GO:0015672,e,BP,6,monovalent inorganic cation transport,74,357,0.031,0.020,1.594,0.042
+10,GO:0006883,e,BP,9,cellular sodium ion homeostasis,9,16,0.004,0.001,4.327,0.042
+11,GO:0098656,e,BP,6,anion transmembrane transport,55,248,0.023,0.014,1.706,0.042
+12,GO:0036376,e,BP,9,sodium ion export across plasma membrane,8,13,0.003,0.001,4.733,0.042
+13,GO:0030007,e,BP,9,cellular potassium ion homeostasis,8,13,0.003,0.001,4.733,0.042
+14,GO:0035725,e,BP,8,sodium ion transmembrane transport,25,86,0.011,0.005,2.236,0.047
+5549,GO:0071826,p,BP,5,ribonucleoprotein complex subunit organization,6,186,0.003,0.010,0.248,0.018
+5550,GO:0006614,p,BP,12,SRP-dependent cotranslational protein targeting to membrane,0,87,0.000,0.005,0.000,0.018
+5551,GO:0022618,p,BP,7,ribonucleoprotein complex assembly,6,179,0.003,0.010,0.258,0.024
+5552,GO:0045047,p,BP,10,protein targeting to ER,1,101,0.000,0.006,0.076,0.027
+5553,GO:0000184,p,BP,10,"nuclear-transcribed mRNA catabolic process, nonsense-mediated decay",2,116,0.001,0.006,0.133,0.037
+5554,GO:0070972,p,BP,6,protein localization to endoplasmic reticulum,2,116,0.001,0.006,0.133,0.037
+5555,GO:0016071,p,BP,7,mRNA metabolic process,49,620,0.021,0.034,0.608,0.042
+5556,GO:0006613,p,BP,11,cotranslational protein targeting to membrane,1,92,0.000,0.005,0.084,0.046
+15305,GO:1902495,e,CC,3,transmembrane transporter complex,66,303,0.028,0.017,1.675,0.011
+15306,GO:0016021,e,CC,3,integral component of membrane,629,4213,0.267,0.233,1.148,0.011
+15307,GO:1990351,e,CC,2,transporter complex,66,311,0.028,0.017,1.632,0.018
+15308,GO:0031224,e,CC,2,intrinsic component of membrane,645,4359,0.274,0.241,1.138,0.019
+15309,GO:0033270,e,CC,2,paranode region of axon,7,11,0.003,0.001,4.895,0.031
+15310,GO:0005886,e,CC,3,plasma membrane,563,3792,0.239,0.209,1.142,0.038
+15311,GO:0005883,e,CC,7,neurofilament,6,9,0.003,0.000,5.128,0.050
+15985,GO:1990904,p,CC,2,ribonucleoprotein complex,44,659,0.019,0.036,0.514,0.000
+15986,GO:0044391,p,CC,3,ribosomal subunit,6,179,0.003,0.010,0.258,0.011
+15987,GO:0098798,p,CC,2,mitochondrial protein complex,12,248,0.005,0.014,0.372,0.011
+15988,GO:0032991,p,CC,1,protein-containing complex,556,4839,0.236,0.267,0.884,0.046
+17227,GO:0005215,e,MF,1,transporter activity,211,1073,0.090,0.059,1.513,0.000
+17228,GO:0022857,e,MF,2,transmembrane transporter activity,189,944,0.080,0.052,1.540,0.000
+17229,GO:0015075,e,MF,3,ion transmembrane transporter activity,156,780,0.066,0.043,1.538,0.000
+17230,GO:0046873,e,MF,6,metal ion transmembrane transporter activity,90,392,0.038,0.022,1.766,0.000
+17231,GO:0015318,e,MF,3,inorganic molecular entity transmembrane transporter activity,145,732,0.062,0.040,1.524,0.000
+17232,GO:0033038,e,MF,5,bitter taste receptor activity,10,16,0.004,0.001,4.807,0.003
+17233,GO:0015079,e,MF,7,potassium ion transmembrane transporter activity,39,146,0.017,0.008,2.055,0.005
+17234,GO:0008324,e,MF,4,cation transmembrane transporter activity,110,572,0.047,0.032,1.479,0.010
+17235,GO:0008509,e,MF,4,anion transmembrane transporter activity,66,305,0.028,0.017,1.664,0.010
+17236,GO:0022890,e,MF,5,inorganic cation transmembrane transporter activity,103,534,0.044,0.029,1.484,0.015
+17237,GO:0005216,e,MF,5,ion channel activity,79,392,0.034,0.022,1.550,0.022
+17238,GO:0005496,e,MF,3,steroid binding,25,86,0.011,0.005,2.236,0.022
+17239,GO:0008527,e,MF,4,taste receptor activity,10,20,0.004,0.001,3.846,0.022
+17240,GO:0022804,e,MF,3,active transmembrane transporter activity,64,305,0.027,0.017,1.614,0.027
+17241,GO:0022836,e,MF,5,gated channel activity,64,307,0.027,0.017,1.603,0.027
+17242,GO:0005249,e,MF,9,voltage-gated potassium channel activity,24,83,0.010,0.005,2.224,0.027
+17243,GO:0015077,e,MF,6,monovalent inorganic cation transmembrane transporter activity,70,347,0.030,0.019,1.552,0.034
+17244,GO:0042626,e,MF,5,ATPase-coupled transmembrane transporter activity,26,95,0.011,0.005,2.105,0.038
+17245,GO:0008238,e,MF,5,exopeptidase activity,28,104,0.012,0.006,2.071,0.038
+18798,GO:0003735,p,MF,2,structural constituent of ribosome,2,155,0.001,0.009,0.099,0.000
+18799,GO:0003723,p,MF,4,RNA binding,157,1591,0.067,0.088,0.759,0.022

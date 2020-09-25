@@ -1,0 +1,134 @@
+,ID,enrichment,branch,depth,name,n_enriched,n_in_cat,ratio_in_study,ratio_in_pop,enrichment_ratio,pv
+0,GO:0044281,e,BP,2,small molecule metabolic process,372,1549,0.110,0.086,1.287,0.000
+1,GO:0140352,e,BP,4,export from cell,231,922,0.068,0.051,1.343,0.001
+2,GO:0032940,e,BP,5,secretion by cell,221,879,0.065,0.049,1.348,0.001
+3,GO:0006521,e,BP,6,regulation of cellular amino acid metabolic process,27,58,0.008,0.003,2.496,0.001
+4,GO:0150146,e,BP,5,cell junction disassembly,10,12,0.003,0.001,4.467,0.001
+5,GO:0035567,e,BP,8,non-canonical Wnt signaling pathway,45,126,0.013,0.007,1.915,0.003
+6,GO:1902930,e,BP,5,regulation of alcohol biosynthetic process,28,66,0.008,0.004,2.274,0.004
+7,GO:0046033,e,BP,10,AMP metabolic process,10,13,0.003,0.001,4.124,0.004
+8,GO:0033238,e,BP,5,regulation of cellular amine metabolic process,31,76,0.009,0.004,2.187,0.004
+9,GO:0098883,e,BP,6,synapse pruning,9,11,0.003,0.001,4.386,0.004
+10,GO:0016192,e,BP,4,vesicle-mediated transport,351,1529,0.104,0.084,1.231,0.004
+11,GO:0044248,e,BP,3,cellular catabolic process,358,1565,0.106,0.086,1.226,0.005
+12,GO:0046903,e,BP,4,secretion,236,980,0.070,0.054,1.291,0.005
+13,GO:0006887,e,BP,6,exocytosis,172,681,0.051,0.038,1.354,0.006
+14,GO:0009056,e,BP,2,catabolic process,409,1820,0.121,0.100,1.205,0.006
+15,GO:0098754,e,BP,1,detoxification,40,112,0.012,0.006,1.915,0.008
+16,GO:0045055,e,BP,7,regulated exocytosis,155,609,0.046,0.034,1.364,0.009
+17,GO:0032880,e,BP,4,regulation of protein localization,232,972,0.069,0.054,1.280,0.010
+18,GO:0060071,e,BP,9,"Wnt signaling pathway, planar cell polarity pathway",34,91,0.010,0.005,2.003,0.010
+19,GO:0006577,e,BP,5,amino-acid betaine metabolic process,11,17,0.003,0.001,3.469,0.012
+20,GO:1905114,e,BP,6,cell surface receptor signaling pathway involved in cell-cell signaling,94,339,0.028,0.019,1.486,0.012
+21,GO:1901566,e,BP,4,organonitrogen compound biosynthetic process,211,879,0.062,0.049,1.287,0.015
+22,GO:0038093,e,BP,7,Fc receptor signaling pathway,51,160,0.015,0.009,1.709,0.016
+23,GO:0051223,e,BP,6,regulation of protein transport,169,682,0.050,0.038,1.328,0.016
+24,GO:0070201,e,BP,5,regulation of establishment of protein localization,174,707,0.051,0.039,1.319,0.017
+25,GO:1901575,e,BP,3,organic substance catabolic process,351,1562,0.104,0.086,1.205,0.018
+26,GO:0044283,e,BP,3,small molecule biosynthetic process,136,533,0.040,0.029,1.368,0.019
+27,GO:0090175,e,BP,6,regulation of establishment of planar polarity,37,106,0.011,0.006,1.871,0.019
+28,GO:1901135,e,BP,3,carbohydrate derivative metabolic process,189,781,0.056,0.043,1.297,0.019
+29,GO:0016055,e,BP,7,Wnt signaling pathway,91,332,0.027,0.018,1.469,0.020
+30,GO:1903530,e,BP,6,regulation of secretion by cell,171,697,0.051,0.038,1.315,0.021
+31,GO:0062012,e,BP,4,regulation of small molecule metabolic process,106,400,0.031,0.022,1.421,0.022
+32,GO:0010273,e,BP,3,detoxification of copper ion,9,13,0.003,0.001,3.711,0.022
+33,GO:0090087,e,BP,5,regulation of peptide transport,174,712,0.051,0.039,1.310,0.023
+34,GO:0002274,e,BP,4,myeloid leukocyte activation,131,516,0.039,0.028,1.361,0.026
+35,GO:0019637,e,BP,4,organophosphate metabolic process,193,806,0.057,0.044,1.284,0.026
+36,GO:0051649,e,BP,3,establishment of localization in cell,469,2161,0.139,0.119,1.163,0.031
+37,GO:1903531,e,BP,7,negative regulation of secretion by cell,55,182,0.016,0.010,1.620,0.034
+38,GO:0055069,e,BP,9,zinc ion homeostasis,14,28,0.004,0.002,2.680,0.035
+39,GO:0055086,e,BP,5,nucleobase-containing small molecule metabolic process,123,483,0.036,0.027,1.365,0.037
+40,GO:0048583,e,BP,3,regulation of response to stimulus,777,3736,0.230,0.206,1.115,0.039
+41,GO:0043436,e,BP,4,oxoacid metabolic process,205,870,0.061,0.048,1.263,0.041
+42,GO:0051046,e,BP,5,regulation of secretion,179,746,0.053,0.041,1.286,0.041
+43,GO:0061687,e,BP,2,detoxification of inorganic compound,9,14,0.003,0.001,3.446,0.041
+44,GO:0009987,e,BP,1,cellular process,2569,13316,0.760,0.735,1.034,0.041
+45,GO:0051410,e,BP,2,detoxification of nitrogen compound,5,5,0.001,0.000,5.361,0.042
+46,GO:0006082,e,BP,3,organic acid metabolic process,208,887,0.062,0.049,1.257,0.043
+47,GO:0006810,e,BP,3,transport,806,3892,0.239,0.215,1.110,0.043
+48,GO:0061517,e,BP,4,macrophage proliferation,6,7,0.002,0.000,4.595,0.043
+49,GO:0061518,e,BP,5,microglial cell proliferation,6,7,0.002,0.000,4.595,0.043
+50,GO:0009058,e,BP,2,biosynthetic process,508,2372,0.150,0.131,1.148,0.046
+6929,GO:0051252,p,BP,6,regulation of RNA metabolic process,488,3386,0.144,0.187,0.773,0.000
+6930,GO:1903506,p,BP,8,regulation of nucleic acid-templated transcription,448,3134,0.133,0.173,0.766,0.000
+6931,GO:2001141,p,BP,7,regulation of RNA biosynthetic process,449,3138,0.133,0.173,0.767,0.000
+6932,GO:0006355,p,BP,9,"regulation of transcription, DNA-templated",442,3080,0.131,0.170,0.769,0.000
+6933,GO:0019219,p,BP,5,regulation of nucleobase-containing compound metabolic process,536,3629,0.159,0.200,0.792,0.000
+6934,GO:2000112,p,BP,6,regulation of cellular macromolecule biosynthetic process,520,3508,0.154,0.194,0.795,0.000
+6935,GO:0010556,p,BP,5,regulation of macromolecule biosynthetic process,544,3624,0.161,0.200,0.805,0.000
+6936,GO:0050907,p,BP,4,detection of chemical stimulus involved in sensory perception,6,186,0.002,0.010,0.173,0.000
+6937,GO:0010468,p,BP,5,regulation of gene expression,673,4342,0.199,0.240,0.831,0.000
+6938,GO:0006357,p,BP,10,regulation of transcription by RNA polymerase II,279,2028,0.083,0.112,0.738,0.000
+6939,GO:0051171,p,BP,4,regulation of nitrogen compound metabolic process,840,5255,0.249,0.290,0.857,0.000
+6940,GO:0080090,p,BP,4,regulation of primary metabolic process,871,5423,0.258,0.299,0.861,0.000
+6941,GO:0031326,p,BP,5,regulation of cellular biosynthetic process,578,3759,0.171,0.208,0.824,0.000
+6942,GO:0060255,p,BP,4,regulation of macromolecule metabolic process,933,5767,0.276,0.318,0.867,0.000
+6943,GO:0050911,p,BP,5,detection of chemical stimulus involved in sensory perception of smell,5,156,0.001,0.009,0.172,0.000
+6944,GO:0009889,p,BP,4,regulation of biosynthetic process,599,3830,0.177,0.211,0.838,0.000
+6945,GO:0031323,p,BP,4,regulation of cellular metabolic process,920,5619,0.272,0.310,0.878,0.000
+6946,GO:0050906,p,BP,3,detection of stimulus involved in sensory perception,16,241,0.005,0.013,0.356,0.000
+6947,GO:0031424,p,BP,2,keratinization,4,128,0.001,0.007,0.168,0.000
+6948,GO:0045944,p,BP,11,positive regulation of transcription by RNA polymerase II,143,1100,0.042,0.061,0.697,0.000
+6949,GO:0051254,p,BP,7,positive regulation of RNA metabolic process,224,1589,0.066,0.088,0.756,0.000
+6950,GO:0009593,p,BP,3,detection of chemical stimulus,15,216,0.004,0.012,0.372,0.001
+6951,GO:0019222,p,BP,3,regulation of metabolic process,1047,6249,0.310,0.345,0.898,0.001
+6952,GO:1902680,p,BP,8,positive regulation of RNA biosynthetic process,215,1504,0.064,0.083,0.766,0.002
+6953,GO:1903508,p,BP,9,positive regulation of nucleic acid-templated transcription,215,1503,0.064,0.083,0.767,0.002
+6954,GO:0045893,p,BP,10,"positive regulation of transcription, DNA-templated",202,1419,0.060,0.078,0.763,0.003
+6955,GO:0045935,p,BP,6,positive regulation of nucleobase-containing compound metabolic process,257,1745,0.076,0.096,0.790,0.003
+6956,GO:0006325,p,BP,4,chromatin organization,82,664,0.024,0.037,0.662,0.005
+6957,GO:0010628,p,BP,6,positive regulation of gene expression,316,2072,0.094,0.114,0.818,0.006
+6958,GO:0010557,p,BP,6,positive regulation of macromolecule biosynthetic process,263,1746,0.078,0.096,0.807,0.012
+6959,GO:0034401,p,BP,5,chromatin organization involved in regulation of transcription,6,113,0.002,0.006,0.285,0.015
+6960,GO:0070828,p,BP,5,heterochromatin organization,1,64,0.000,0.004,0.084,0.017
+6961,GO:0097549,p,BP,6,chromatin organization involved in negative regulation of transcription,5,103,0.001,0.006,0.260,0.017
+6962,GO:0040029,p,BP,6,"regulation of gene expression, epigenetic",20,220,0.006,0.012,0.487,0.025
+6963,GO:0008219,p,BP,2,cell death,101,750,0.030,0.041,0.722,0.027
+6964,GO:0012501,p,BP,3,programmed cell death,95,712,0.028,0.039,0.715,0.032
+6965,GO:0070868,p,BP,7,heterochromatin organization involved in chromatin silencing,1,57,0.000,0.003,0.094,0.041
+15305,GO:0098978,e,CC,4,glutamatergic synapse,102,353,0.030,0.019,1.549,0.001
+15306,GO:0031982,e,CC,4,vesicle,647,2978,0.191,0.164,1.165,0.001
+15307,GO:0005829,e,CC,2,cytosol,1002,4820,0.297,0.266,1.114,0.003
+15308,GO:0070062,e,CC,6,extracellular exosome,430,1932,0.127,0.107,1.193,0.006
+15309,GO:1903561,e,CC,5,extracellular vesicle,433,1951,0.128,0.108,1.190,0.006
+15310,GO:0043230,e,CC,3,extracellular organelle,433,1952,0.128,0.108,1.189,0.006
+15311,GO:0045202,e,CC,3,synapse,203,841,0.060,0.046,1.294,0.009
+15312,GO:0098588,e,CC,4,bounding membrane of organelle,410,1849,0.121,0.102,1.189,0.010
+15313,GO:0030659,e,CC,5,cytoplasmic vesicle membrane,162,664,0.048,0.037,1.308,0.025
+15314,GO:0012505,e,CC,2,endomembrane system,47,150,0.014,0.008,1.680,0.026
+15315,GO:0031226,e,CC,3,intrinsic component of plasma membrane,297,1323,0.088,0.073,1.203,0.041
+16209,GO:0000790,p,CC,3,nuclear chromatin,94,839,0.028,0.046,0.601,0.000
+16210,GO:0000785,p,CC,2,chromatin,118,986,0.035,0.054,0.642,0.000
+16211,GO:0005634,p,CC,5,nucleus,756,4754,0.224,0.262,0.852,0.000
+16212,GO:0005882,p,CC,6,intermediate filament,8,158,0.002,0.009,0.271,0.000
+17227,GO:0003824,e,MF,1,catalytic activity,1095,5179,0.324,0.286,1.133,0.000
+17228,GO:0003924,e,MF,7,GTPase activity,93,300,0.028,0.017,1.662,0.000
+17229,GO:0032561,e,MF,7,guanyl ribonucleotide binding,99,363,0.029,0.020,1.462,0.010
+17230,GO:0019001,e,MF,6,guanyl nucleotide binding,99,363,0.029,0.020,1.462,0.010
+17231,GO:0001883,e,MF,4,purine nucleoside binding,96,351,0.028,0.019,1.466,0.010
+17232,GO:0005525,e,MF,8,GTP binding,94,344,0.028,0.019,1.465,0.011
+17233,GO:0032550,e,MF,5,purine ribonucleoside binding,95,348,0.028,0.019,1.463,0.011
+17234,GO:0032549,e,MF,4,ribonucleoside binding,95,351,0.028,0.019,1.451,0.016
+17235,GO:0001882,e,MF,3,nucleoside binding,96,357,0.028,0.020,1.442,0.017
+19103,GO:0003677,p,MF,4,DNA binding,275,2270,0.081,0.125,0.649,0.000
+19104,GO:0003700,p,MF,2,DNA-binding transcription factor activity,120,1138,0.036,0.063,0.565,0.000
+19105,GO:0003676,p,MF,3,nucleic acid binding,536,3724,0.159,0.206,0.772,0.000
+19106,GO:0140110,p,MF,1,transcription regulator activity,179,1531,0.053,0.085,0.627,0.000
+19107,GO:0000981,p,MF,3,"DNA-binding transcription factor activity, RNA polymerase II-specific",98,902,0.029,0.050,0.582,0.000
+19108,GO:0043565,p,MF,5,sequence-specific DNA binding,128,1079,0.038,0.060,0.636,0.000
+19109,GO:0004984,p,MF,4,olfactory receptor activity,5,156,0.001,0.009,0.172,0.000
+19110,GO:0001228,p,MF,4,"DNA-binding transcription activator activity, RNA polymerase II-specific",33,387,0.010,0.021,0.457,0.000
+19111,GO:0001216,p,MF,3,DNA-binding transcription activator activity,34,390,0.010,0.022,0.467,0.000
+19112,GO:1990837,p,MF,6,sequence-specific double-stranded DNA binding,100,825,0.030,0.046,0.650,0.000
+19113,GO:0001012,p,MF,6,RNA polymerase II regulatory region DNA binding,88,744,0.026,0.041,0.634,0.000
+19114,GO:0000977,p,MF,8,RNA polymerase II regulatory region sequence-specific DNA binding,87,737,0.026,0.041,0.633,0.000
+19115,GO:0000976,p,MF,7,transcription regulatory region sequence-specific DNA binding,95,783,0.028,0.043,0.650,0.000
+19116,GO:0001067,p,MF,4,regulatory region nucleic acid binding,112,888,0.033,0.049,0.676,0.000
+19117,GO:0044212,p,MF,5,transcription regulatory region DNA binding,112,887,0.033,0.049,0.677,0.000
+19118,GO:0003690,p,MF,5,double-stranded DNA binding,118,912,0.035,0.050,0.694,0.001
+19119,GO:1901363,p,MF,2,heterocyclic compound binding,918,5478,0.272,0.302,0.898,0.003
+19120,GO:0000987,p,MF,8,cis-regulatory region sequence-specific DNA binding,68,568,0.020,0.031,0.642,0.003
+19121,GO:0035326,p,MF,6,cis-regulatory region binding,69,574,0.020,0.032,0.644,0.003
+19122,GO:0097159,p,MF,2,organic cyclic compound binding,932,5550,0.276,0.306,0.900,0.004
+19123,GO:0000978,p,MF,9,RNA polymerase II cis-regulatory region sequence-specific DNA binding,65,544,0.019,0.030,0.641,0.005
