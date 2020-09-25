@@ -45,8 +45,8 @@
 43,GO:0002683,e,BP,4,negative regulation of immune system process,35,385,0.043,0.021,2.008,0.030
 44,GO:0051049,e,BP,4,regulation of transport,112,1733,0.137,0.096,1.428,0.030
 45,GO:0098542,e,BP,5,defense response to other organism,46,561,0.056,0.031,1.811,0.033
-46,GO:0150146,e,BP,5,cell junction disassembly,5,12,0.006,0.001,9.204,0.033
-47,GO:0016322,e,BP,6,neuron remodeling,5,12,0.006,0.001,9.204,0.033
+46,GO:0016322,e,BP,6,neuron remodeling,5,12,0.006,0.001,9.204,0.033
+47,GO:0150146,e,BP,5,cell junction disassembly,5,12,0.006,0.001,9.204,0.033
 48,GO:1903038,e,BP,7,negative regulation of leukocyte cell-cell adhesion,15,109,0.018,0.006,3.040,0.033
 49,GO:0007166,e,BP,5,cell surface receptor signaling pathway,125,1985,0.152,0.110,1.391,0.034
 50,GO:0034728,e,BP,6,nucleosome organization,19,162,0.023,0.009,2.591,0.037

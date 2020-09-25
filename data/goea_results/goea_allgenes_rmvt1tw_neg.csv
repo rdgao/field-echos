@@ -1,91 +1,18 @@
 ,ID,enrichment,branch,depth,name,n_enriched,n_in_cat,ratio_in_study,ratio_in_pop,enrichment_ratio,pv
-all,GO:0006813,e,BP,7,potassium ion transport,28,156,0.025,0.009,2.911,0.004
-all,GO:0071805,e,BP,8,potassium ion transmembrane transport,26,147,0.023,0.008,2.868,0.008
-all,GO:0015079,e,MF,7,potassium ion transmembrane transporter activity,26,146,0.023,0.008,2.888,0.001
-all,GO:0015075,e,MF,3,ion transmembrane transporter activity,83,780,0.074,0.043,1.726,0.001
-all,GO:0022857,e,MF,2,transmembrane transporter activity,96,944,0.086,0.052,1.649,0.001
-all,GO:0046873,e,MF,6,metal ion transmembrane transporter activity,50,392,0.045,0.022,2.068,0.001
-all,GO:0005215,e,MF,1,transporter activity,105,1073,0.094,0.059,1.587,0.002
-all,GO:0022832,e,MF,6,voltage-gated channel activity,28,184,0.025,0.01,2.468,0.006
-all,GO:0005244,e,MF,7,voltage-gated ion channel activity,28,184,0.025,0.01,2.468,0.006
-all,GO:0015318,e,MF,3,inorganic molecular entity transmembrane transporter activity,75,732,0.067,0.04,1.662,0.008
-all,GO:0001227,e,MF,4,"DNA-binding transcription repressor activity, RNA polymerase II-specific",32,233,0.029,0.013,2.227,0.011
-all,GO:0001217,e,MF,3,DNA-binding transcription repressor activity,32,234,0.029,0.013,2.218,0.011
-all,GO:0022836,e,MF,5,gated channel activity,38,307,0.034,0.017,2.007,0.015
-all,GO:0005249,e,MF,9,voltage-gated potassium channel activity,16,83,0.014,0.005,3.126,0.015
-all,GO:0015077,e,MF,6,monovalent inorganic cation transmembrane transporter activity,41,347,0.037,0.019,1.916,0.022
-all,GO:0005267,e,MF,8,potassium channel activity,19,114,0.017,0.006,2.703,0.022
-all,GO:0022890,e,MF,5,inorganic cation transmembrane transporter activity,56,534,0.05,0.029,1.701,0.033
-positive,GO:0050866,e,BP,5,negative regulation of cell activation,28,172,0.034,0.009,3.596,0
-positive,GO:0002376,e,BP,1,immune system process,133,1804,0.162,0.1,1.629,0
-positive,GO:0006955,e,BP,2,immune response,69,765,0.084,0.042,1.992,0
-positive,GO:0002695,e,BP,6,negative regulation of leukocyte activation,23,152,0.028,0.008,3.343,0.001
-positive,GO:0045087,e,BP,6,innate immune response,39,375,0.048,0.021,2.297,0.005
-positive,GO:0050865,e,BP,4,regulation of cell activation,46,484,0.056,0.027,2.099,0.005
-positive,GO:0045321,e,BP,3,leukocyte activation,64,771,0.078,0.043,1.834,0.006
-positive,GO:0007165,e,BP,4,signal transduction,244,4144,0.298,0.229,1.301,0.006
-positive,GO:0051250,e,BP,7,negative regulation of lymphocyte activation,19,127,0.023,0.007,3.305,0.007
-positive,GO:0070663,e,BP,5,regulation of leukocyte proliferation,24,188,0.029,0.01,2.82,0.007
-positive,GO:0002252,e,BP,2,immune effector process,66,820,0.08,0.045,1.778,0.009
-positive,GO:0050670,e,BP,7,regulation of lymphocyte proliferation,23,180,0.028,0.01,2.823,0.009
-positive,GO:0032944,e,BP,6,regulation of mononuclear cell proliferation,23,181,0.028,0.01,2.807,0.009
-positive,GO:0050776,e,BP,4,regulation of immune response,61,754,0.074,0.042,1.787,0.011
-positive,GO:0002682,e,BP,3,regulation of immune system process,92,1294,0.112,0.071,1.571,0.015
-positive,GO:0046634,e,BP,8,regulation of alpha-beta T cell activation,14,82,0.017,0.005,3.772,0.016
-positive,GO:0001775,e,BP,2,cell activation,68,879,0.083,0.049,1.709,0.016
-positive,GO:0032956,e,BP,7,regulation of actin cytoskeleton organization,33,327,0.04,0.018,2.229,0.016
-positive,GO:0003150,e,BP,5,muscular septum morphogenesis,4,5,0.005,0,17.672,0.016
-positive,GO:0032945,e,BP,7,negative regulation of mononuclear cell proliferation,12,63,0.015,0.003,4.208,0.016
-positive,GO:0050672,e,BP,8,negative regulation of lymphocyte proliferation,12,63,0.015,0.003,4.208,0.016
-positive,GO:0006952,e,BP,3,defense response,69,904,0.084,0.05,1.686,0.016
-positive,GO:0002694,e,BP,5,regulation of leukocyte activation,41,450,0.05,0.025,2.013,0.016
-positive,GO:0002253,e,BP,6,activation of immune response,33,334,0.04,0.018,2.183,0.016
-positive,GO:0030833,e,BP,10,regulation of actin filament polymerization,20,156,0.024,0.009,2.832,0.016
-positive,GO:0032970,e,BP,4,regulation of actin filament-based process,35,362,0.043,0.02,2.136,0.017
-positive,GO:0002684,e,BP,4,positive regulation of immune system process,63,815,0.077,0.045,1.708,0.017
-positive,GO:0046640,e,BP,9,regulation of alpha-beta T cell proliferation,8,29,0.01,0.002,6.094,0.017
-positive,GO:0050868,e,BP,8,negative regulation of T cell activation,15,98,0.018,0.005,3.381,0.017
-positive,GO:0002274,e,BP,4,myeloid leukocyte activation,45,516,0.055,0.028,1.926,0.017
-positive,GO:0008064,e,BP,9,regulation of actin polymerization or depolymerization,21,172,0.026,0.009,2.697,0.017
-positive,GO:0030832,e,BP,8,regulation of actin filament length,21,173,0.026,0.01,2.681,0.017
-positive,GO:0006334,e,BP,8,nucleosome assembly,17,123,0.021,0.007,3.053,0.018
-positive,GO:0070664,e,BP,6,negative regulation of leukocyte proliferation,12,67,0.015,0.004,3.956,0.018
-positive,GO:0038096,e,BP,10,Fc-gamma receptor signaling pathway involved in phagocytosis,12,70,0.015,0.004,3.787,0.026
-positive,GO:0002433,e,BP,7,immune response-regulating cell surface receptor signaling pathway involved in phagocytosis,12,70,0.015,0.004,3.787,0.026
-positive,GO:0098883,e,BP,6,synapse pruning,5,11,0.006,0.001,10.041,0.027
-positive,GO:0038094,e,BP,8,Fc-gamma receptor signaling pathway,12,71,0.015,0.004,3.734,0.029
-positive,GO:0051249,e,BP,6,regulation of lymphocyte activation,35,380,0.043,0.021,2.035,0.029
-positive,GO:0002431,e,BP,9,Fc receptor mediated stimulatory signaling pathway,12,72,0.015,0.004,3.682,0.03
-positive,GO:0042116,e,BP,5,macrophage activation,9,42,0.011,0.002,4.734,0.03
-positive,GO:0110053,e,BP,8,regulation of actin filament organization,26,252,0.032,0.014,2.279,0.03
-positive,GO:0150064,e,BP,4,vertebrate eye-specific patterning,3,3,0.004,0,22.09,0.03
-positive,GO:0002683,e,BP,4,negative regulation of immune system process,35,385,0.043,0.021,2.008,0.03
-positive,GO:0051049,e,BP,4,regulation of transport,112,1733,0.137,0.096,1.428,0.03
-positive,GO:0098542,e,BP,5,defense response to other organism,46,561,0.056,0.031,1.811,0.033
-positive,GO:0150146,e,BP,5,cell junction disassembly,5,12,0.006,0.001,9.204,0.033
-positive,GO:0016322,e,BP,6,neuron remodeling,5,12,0.006,0.001,9.204,0.033
-positive,GO:1903038,e,BP,7,negative regulation of leukocyte cell-cell adhesion,15,109,0.018,0.006,3.04,0.033
-positive,GO:0007166,e,BP,5,cell surface receptor signaling pathway,125,1985,0.152,0.11,1.391,0.034
-positive,GO:0034728,e,BP,6,nucleosome organization,19,162,0.023,0.009,2.591,0.037
-positive,GO:0036336,e,BP,6,dendritic cell migration,6,19,0.007,0.001,6.976,0.037
-positive,GO:0048584,e,BP,4,positive regulation of response to stimulus,128,2050,0.156,0.113,1.379,0.039
-positive,GO:0001774,e,BP,6,microglial cell activation,7,27,0.009,0.001,5.727,0.039
-positive,GO:0002269,e,BP,4,leukocyte activation involved in inflammatory response,7,27,0.009,0.001,5.727,0.039
-positive,GO:0050778,e,BP,5,positive regulation of immune response,43,522,0.052,0.029,1.82,0.039
-positive,GO:2000112,p,BP,6,regulation of cellular macromolecule biosynthetic process,114,3508,0.139,0.194,0.718,0.017
-positive,GO:0051252,p,BP,6,regulation of RNA metabolic process,110,3386,0.134,0.187,0.718,0.019
-positive,GO:0044271,p,BP,4,cellular nitrogen compound biosynthetic process,34,1356,0.041,0.075,0.554,0.029
-positive,GO:0019219,p,BP,5,regulation of nucleobase-containing compound metabolic process,121,3629,0.148,0.2,0.737,0.029
-positive,GO:0090304,p,BP,5,nucleic acid metabolic process,62,2093,0.076,0.116,0.654,0.037
-positive,GO:0032993,e,CC,2,protein-DNA complex,21,164,0.026,0.009,2.829,0.016
-positive,GO:0000786,e,CC,3,nucleosome,15,95,0.018,0.005,3.488,0.016
-positive,GO:0005887,e,CC,4,integral component of plasma membrane,88,1250,0.107,0.069,1.555,0.016
-positive,GO:0031226,e,CC,3,intrinsic component of plasma membrane,92,1323,0.112,0.073,1.536,0.016
-positive,GO:0044815,e,CC,2,DNA packaging complex,15,103,0.018,0.006,3.217,0.023
-positive,GO:0030666,e,CC,6,endocytic vesicle membrane,18,147,0.022,0.008,2.705,0.034
-positive,GO:0031514,e,CC,5,motile cilium,16,122,0.02,0.007,2.897,0.034
-positive,GO:0043235,e,CC,2,receptor complex,33,368,0.04,0.02,1.981,0.04
-positive,GO:0000839,e,CC,8,Hrd1p ubiquitin ligase ERAD-L complex,4,8,0.005,0,11.045,0.047
-positive,GO:0016021,e,CC,3,integral component of membrane,235,4213,0.287,0.233,1.232,0.047
-positive,GO:0005634,p,CC,5,nucleus,170,4754,0.207,0.262,0.79,0.04
-positive,GO:0003676,p,MF,3,nucleic acid binding,117,3724,0.143,0.206,0.694,0.012
+0,GO:0006813,e,BP,7,potassium ion transport,28,156,0.025,0.009,2.911,0.004
+1,GO:0071805,e,BP,8,potassium ion transmembrane transport,26,147,0.023,0.008,2.868,0.008
+17227,GO:0015079,e,MF,7,potassium ion transmembrane transporter activity,26,146,0.023,0.008,2.888,0.001
+17228,GO:0015075,e,MF,3,ion transmembrane transporter activity,83,780,0.074,0.043,1.726,0.001
+17229,GO:0022857,e,MF,2,transmembrane transporter activity,96,944,0.086,0.052,1.649,0.001
+17230,GO:0046873,e,MF,6,metal ion transmembrane transporter activity,50,392,0.045,0.022,2.068,0.001
+17231,GO:0005215,e,MF,1,transporter activity,105,1073,0.094,0.059,1.587,0.002
+17232,GO:0022832,e,MF,6,voltage-gated channel activity,28,184,0.025,0.010,2.468,0.006
+17233,GO:0005244,e,MF,7,voltage-gated ion channel activity,28,184,0.025,0.010,2.468,0.006
+17234,GO:0015318,e,MF,3,inorganic molecular entity transmembrane transporter activity,75,732,0.067,0.040,1.662,0.008
+17235,GO:0001227,e,MF,4,"DNA-binding transcription repressor activity, RNA polymerase II-specific",32,233,0.029,0.013,2.227,0.011
+17236,GO:0001217,e,MF,3,DNA-binding transcription repressor activity,32,234,0.029,0.013,2.218,0.011
+17237,GO:0022836,e,MF,5,gated channel activity,38,307,0.034,0.017,2.007,0.015
+17238,GO:0005249,e,MF,9,voltage-gated potassium channel activity,16,83,0.014,0.005,3.126,0.015
+17239,GO:0015077,e,MF,6,monovalent inorganic cation transmembrane transporter activity,41,347,0.037,0.019,1.916,0.022
+17240,GO:0005267,e,MF,8,potassium channel activity,19,114,0.017,0.006,2.703,0.022
+17241,GO:0022890,e,MF,5,inorganic cation transmembrane transporter activity,56,534,0.050,0.029,1.701,0.033
