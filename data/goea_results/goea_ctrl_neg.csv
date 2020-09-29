@@ -47,8 +47,8 @@
 45,GO:0051410,e,BP,2,detoxification of nitrogen compound,5,5,0.001,0.000,5.361,0.042
 46,GO:0006082,e,BP,3,organic acid metabolic process,208,887,0.062,0.049,1.257,0.043
 47,GO:0006810,e,BP,3,transport,806,3892,0.239,0.215,1.110,0.043
-48,GO:0061517,e,BP,4,macrophage proliferation,6,7,0.002,0.000,4.595,0.043
-49,GO:0061518,e,BP,5,microglial cell proliferation,6,7,0.002,0.000,4.595,0.043
+48,GO:0061518,e,BP,5,microglial cell proliferation,6,7,0.002,0.000,4.595,0.043
+49,GO:0061517,e,BP,4,macrophage proliferation,6,7,0.002,0.000,4.595,0.043
 50,GO:0009058,e,BP,2,biosynthetic process,508,2372,0.150,0.131,1.148,0.046
 6929,GO:0051252,p,BP,6,regulation of RNA metabolic process,488,3386,0.144,0.187,0.773,0.000
 6930,GO:1903506,p,BP,8,regulation of nucleic acid-templated transcription,448,3134,0.133,0.173,0.766,0.000

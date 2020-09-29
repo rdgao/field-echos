@@ -103,8 +103,8 @@
 17233,GO:0097367,e,MF,2,carbohydrate derivative binding,731,2051,0.127,0.113,1.126,0.013
 17234,GO:0036094,e,MF,2,small molecule binding,827,2341,0.144,0.129,1.116,0.014
 17235,GO:0016462,e,MF,5,pyrophosphatase activity,304,795,0.053,0.044,1.208,0.015
-17236,GO:0016818,e,MF,4,"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides",304,798,0.053,0.044,1.203,0.019
-17237,GO:0016817,e,MF,3,"hydrolase activity, acting on acid anhydrides",304,798,0.053,0.044,1.203,0.019
+17236,GO:0016817,e,MF,3,"hydrolase activity, acting on acid anhydrides",304,798,0.053,0.044,1.203,0.019
+17237,GO:0016818,e,MF,4,"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides",304,798,0.053,0.044,1.203,0.019
 17238,GO:0003924,e,MF,7,GTPase activity,127,300,0.022,0.017,1.337,0.021
 17239,GO:0022851,e,MF,10,GABA-gated chloride ion channel activity,11,13,0.002,0.001,2.673,0.024
 17240,GO:0008195,e,MF,6,phosphatidate phosphatase activity,11,13,0.002,0.001,2.673,0.024

@@ -24,8 +24,8 @@
 8809,GO:0005215,e,MF,1,transporter activity,39,303,0.235,0.125,1.883,0.006
 8810,GO:0022857,e,MF,2,transmembrane transporter activity,37,284,0.223,0.117,1.906,0.006
 8811,GO:0022836,e,MF,5,gated channel activity,25,159,0.151,0.065,2.301,0.006
-8812,GO:0015267,e,MF,4,channel activity,28,187,0.169,0.077,2.191,0.006
-8813,GO:0022803,e,MF,3,passive transmembrane transporter activity,28,187,0.169,0.077,2.191,0.006
+8812,GO:0022803,e,MF,3,passive transmembrane transporter activity,28,187,0.169,0.077,2.191,0.006
+8813,GO:0015267,e,MF,4,channel activity,28,187,0.169,0.077,2.191,0.006
 8814,GO:0005249,e,MF,9,voltage-gated potassium channel activity,12,48,0.072,0.020,3.658,0.006
 8815,GO:0005261,e,MF,6,cation channel activity,23,143,0.139,0.059,2.353,0.009
 8816,GO:0005267,e,MF,8,potassium channel activity,14,67,0.084,0.028,3.058,0.011
