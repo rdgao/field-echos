@@ -47,8 +47,8 @@
 45,GO:0051410,e,BP,2,detoxification of nitrogen compound,5,5,0.001,0.000,5.361,0.042
 46,GO:0006082,e,BP,3,organic acid metabolic process,208,887,0.062,0.049,1.257,0.043
 47,GO:0006810,e,BP,3,transport,806,3892,0.239,0.215,1.110,0.043
-48,GO:0061518,e,BP,5,microglial cell proliferation,6,7,0.002,0.000,4.595,0.043
-49,GO:0061517,e,BP,4,macrophage proliferation,6,7,0.002,0.000,4.595,0.043
+48,GO:0061517,e,BP,4,macrophage proliferation,6,7,0.002,0.000,4.595,0.043
+49,GO:0061518,e,BP,5,microglial cell proliferation,6,7,0.002,0.000,4.595,0.043
 50,GO:0009058,e,BP,2,biosynthetic process,508,2372,0.150,0.131,1.148,0.046
 6929,GO:0051252,p,BP,6,regulation of RNA metabolic process,488,3386,0.144,0.187,0.773,0.000
 6930,GO:1903506,p,BP,8,regulation of nucleic acid-templated transcription,448,3134,0.133,0.173,0.766,0.000
@@ -104,8 +104,8 @@
 16212,GO:0005882,p,CC,6,intermediate filament,8,158,0.002,0.009,0.271,0.000
 17227,GO:0003824,e,MF,1,catalytic activity,1095,5179,0.324,0.286,1.133,0.000
 17228,GO:0003924,e,MF,7,GTPase activity,93,300,0.028,0.017,1.662,0.000
-17229,GO:0032561,e,MF,7,guanyl ribonucleotide binding,99,363,0.029,0.020,1.462,0.010
-17230,GO:0019001,e,MF,6,guanyl nucleotide binding,99,363,0.029,0.020,1.462,0.010
+17229,GO:0019001,e,MF,6,guanyl nucleotide binding,99,363,0.029,0.020,1.462,0.010
+17230,GO:0032561,e,MF,7,guanyl ribonucleotide binding,99,363,0.029,0.020,1.462,0.010
 17231,GO:0001883,e,MF,4,purine nucleoside binding,96,351,0.028,0.019,1.466,0.010
 17232,GO:0005525,e,MF,8,GTP binding,94,344,0.028,0.019,1.465,0.011
 17233,GO:0032550,e,MF,5,purine ribonucleoside binding,95,348,0.028,0.019,1.463,0.011
