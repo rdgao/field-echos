@@ -1,4 +1,6 @@
 # field-echos
+[![DOI](https://zenodo.org/badge/168733703.svg)](https://zenodo.org/badge/latestdoi/168733703)
+
 Project code for extracting neural population timescale from field potential data (LFP, ECoG, etc).
 
 Paper is now published in eLife ([here][timescales_elife].)
