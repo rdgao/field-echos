@@ -106,8 +106,8 @@
 17236,GO:0016818,e,MF,4,"hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides",304,798,0.053,0.044,1.203,0.019
 17237,GO:0016817,e,MF,3,"hydrolase activity, acting on acid anhydrides",304,798,0.053,0.044,1.203,0.019
 17238,GO:0003924,e,MF,7,GTPase activity,127,300,0.022,0.017,1.337,0.021
-17239,GO:0022851,e,MF,10,GABA-gated chloride ion channel activity,11,13,0.002,0.001,2.673,0.024
-17240,GO:0008195,e,MF,6,phosphatidate phosphatase activity,11,13,0.002,0.001,2.673,0.024
+17239,GO:0008195,e,MF,6,phosphatidate phosphatase activity,11,13,0.002,0.001,2.673,0.024
+17240,GO:0022851,e,MF,10,GABA-gated chloride ion channel activity,11,13,0.002,0.001,2.673,0.024
 17241,GO:0005509,e,MF,5,calcium ion binding,236,606,0.041,0.033,1.230,0.024
 17242,GO:0005237,e,MF,9,inhibitory extracellular ligand-gated ion channel activity,12,15,0.002,0.001,2.527,0.028
 17243,GO:0015075,e,MF,3,ion transmembrane transporter activity,294,780,0.051,0.043,1.191,0.038

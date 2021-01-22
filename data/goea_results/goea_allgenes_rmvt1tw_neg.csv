@@ -6,8 +6,8 @@
 17229,GO:0022857,e,MF,2,transmembrane transporter activity,96,944,0.086,0.052,1.649,0.001
 17230,GO:0046873,e,MF,6,metal ion transmembrane transporter activity,50,392,0.045,0.022,2.068,0.001
 17231,GO:0005215,e,MF,1,transporter activity,105,1073,0.094,0.059,1.587,0.002
-17232,GO:0022832,e,MF,6,voltage-gated channel activity,28,184,0.025,0.010,2.468,0.006
-17233,GO:0005244,e,MF,7,voltage-gated ion channel activity,28,184,0.025,0.010,2.468,0.006
+17232,GO:0005244,e,MF,7,voltage-gated ion channel activity,28,184,0.025,0.010,2.468,0.006
+17233,GO:0022832,e,MF,6,voltage-gated channel activity,28,184,0.025,0.010,2.468,0.006
 17234,GO:0015318,e,MF,3,inorganic molecular entity transmembrane transporter activity,75,732,0.067,0.040,1.662,0.008
 17235,GO:0001227,e,MF,4,"DNA-binding transcription repressor activity, RNA polymerase II-specific",32,233,0.029,0.013,2.227,0.011
 17236,GO:0001217,e,MF,3,DNA-binding transcription repressor activity,32,234,0.029,0.013,2.218,0.011

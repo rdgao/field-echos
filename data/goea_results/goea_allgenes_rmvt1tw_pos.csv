@@ -18,8 +18,8 @@
 16,GO:0001775,e,BP,2,cell activation,68,879,0.083,0.049,1.709,0.016
 17,GO:0032956,e,BP,7,regulation of actin cytoskeleton organization,33,327,0.040,0.018,2.229,0.016
 18,GO:0003150,e,BP,5,muscular septum morphogenesis,4,5,0.005,0.000,17.672,0.016
-19,GO:0050672,e,BP,8,negative regulation of lymphocyte proliferation,12,63,0.015,0.003,4.208,0.016
-20,GO:0032945,e,BP,7,negative regulation of mononuclear cell proliferation,12,63,0.015,0.003,4.208,0.016
+19,GO:0032945,e,BP,7,negative regulation of mononuclear cell proliferation,12,63,0.015,0.003,4.208,0.016
+20,GO:0050672,e,BP,8,negative regulation of lymphocyte proliferation,12,63,0.015,0.003,4.208,0.016
 21,GO:0006952,e,BP,3,defense response,69,904,0.084,0.050,1.686,0.016
 22,GO:0002694,e,BP,5,regulation of leukocyte activation,41,450,0.050,0.025,2.013,0.016
 23,GO:0002253,e,BP,6,activation of immune response,33,334,0.040,0.018,2.183,0.016
@@ -33,8 +33,8 @@
 31,GO:0030832,e,BP,8,regulation of actin filament length,21,173,0.026,0.010,2.681,0.017
 32,GO:0006334,e,BP,8,nucleosome assembly,17,123,0.021,0.007,3.053,0.018
 33,GO:0070664,e,BP,6,negative regulation of leukocyte proliferation,12,67,0.015,0.004,3.956,0.018
-34,GO:0002433,e,BP,7,immune response-regulating cell surface receptor signaling pathway involved in phagocytosis,12,70,0.015,0.004,3.787,0.026
-35,GO:0038096,e,BP,10,Fc-gamma receptor signaling pathway involved in phagocytosis,12,70,0.015,0.004,3.787,0.026
+34,GO:0038096,e,BP,10,Fc-gamma receptor signaling pathway involved in phagocytosis,12,70,0.015,0.004,3.787,0.026
+35,GO:0002433,e,BP,7,immune response-regulating cell surface receptor signaling pathway involved in phagocytosis,12,70,0.015,0.004,3.787,0.026
 36,GO:0098883,e,BP,6,synapse pruning,5,11,0.006,0.001,10.041,0.027
 37,GO:0038094,e,BP,8,Fc-gamma receptor signaling pathway,12,71,0.015,0.004,3.734,0.029
 38,GO:0051249,e,BP,6,regulation of lymphocyte activation,35,380,0.043,0.021,2.035,0.029

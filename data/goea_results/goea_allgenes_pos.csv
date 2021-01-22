@@ -24,8 +24,8 @@
 22,GO:0002252,e,BP,2,immune effector process,100,820,0.069,0.045,1.521,0.009
 23,GO:0050866,e,BP,5,negative regulation of cell activation,31,172,0.021,0.009,2.248,0.009
 24,GO:0002269,e,BP,4,leukocyte activation involved in inflammatory response,10,27,0.007,0.001,4.620,0.009
-25,GO:0001774,e,BP,6,microglial cell activation,10,27,0.007,0.001,4.620,0.009
-26,GO:0045010,e,BP,12,actin nucleation,10,27,0.007,0.001,4.620,0.009
+25,GO:0045010,e,BP,12,actin nucleation,10,27,0.007,0.001,4.620,0.009
+26,GO:0001774,e,BP,6,microglial cell activation,10,27,0.007,0.001,4.620,0.009
 27,GO:0032940,e,BP,5,secretion by cell,105,879,0.072,0.049,1.490,0.011
 28,GO:0045055,e,BP,7,regulated exocytosis,78,609,0.054,0.034,1.598,0.012
 29,GO:0140352,e,BP,4,export from cell,109,922,0.075,0.051,1.475,0.012
@@ -41,8 +41,8 @@
 39,GO:0002263,e,BP,3,cell activation involved in immune response,69,535,0.048,0.030,1.609,0.026
 40,GO:0048584,e,BP,4,positive regulation of response to stimulus,211,2050,0.145,0.113,1.284,0.027
 41,GO:0043299,e,BP,8,leukocyte degranulation,60,452,0.041,0.025,1.656,0.027
-42,GO:0002433,e,BP,7,immune response-regulating cell surface receptor signaling pathway involved in phagocytosis,16,70,0.011,0.004,2.851,0.027
-43,GO:0038096,e,BP,10,Fc-gamma receptor signaling pathway involved in phagocytosis,16,70,0.011,0.004,2.851,0.027
+42,GO:0038096,e,BP,10,Fc-gamma receptor signaling pathway involved in phagocytosis,16,70,0.011,0.004,2.851,0.027
+43,GO:0002433,e,BP,7,immune response-regulating cell surface receptor signaling pathway involved in phagocytosis,16,70,0.011,0.004,2.851,0.027
 44,GO:0002695,e,BP,6,negative regulation of leukocyte activation,27,152,0.019,0.008,2.216,0.029
 45,GO:0016192,e,BP,4,vesicle-mediated transport,163,1529,0.112,0.084,1.330,0.030
 46,GO:0002275,e,BP,5,myeloid cell activation involved in immune response,61,464,0.042,0.026,1.640,0.030
@@ -58,8 +58,8 @@
 56,GO:1903037,e,BP,6,regulation of leukocyte cell-cell adhesion,40,274,0.028,0.015,1.821,0.040
 57,GO:0032930,e,BP,8,positive regulation of superoxide anion generation,7,17,0.005,0.001,5.137,0.041
 58,GO:0042129,e,BP,8,regulation of T cell proliferation,24,136,0.017,0.008,2.202,0.042
-59,GO:0042534,e,BP,9,regulation of tumor necrosis factor biosynthetic process,9,28,0.006,0.002,4.010,0.045
-60,GO:0055069,e,BP,9,zinc ion homeostasis,9,28,0.006,0.002,4.010,0.045
+59,GO:0055069,e,BP,9,zinc ion homeostasis,9,28,0.006,0.002,4.010,0.045
+60,GO:0042534,e,BP,9,regulation of tumor necrosis factor biosynthetic process,9,28,0.006,0.002,4.010,0.045
 61,GO:0061900,e,BP,3,glial cell activation,10,34,0.007,0.002,3.669,0.046
 62,GO:0002283,e,BP,7,neutrophil activation involved in immune response,57,437,0.039,0.024,1.627,0.046
 63,GO:0042119,e,BP,6,neutrophil activation,58,445,0.040,0.025,1.626,0.049

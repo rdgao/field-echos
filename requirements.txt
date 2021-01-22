@@ -1,0 +1,5 @@
+brainspace==0.1.1
+mne==0.22.0
+fooof==1.0.0
+pysurfer==0.10.0
+goatools==1.0.15
