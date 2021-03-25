@@ -1,0 +1,54 @@
+# http://matplotlib.org/users/customizing.html
+
+# Note: Units are in pt not in px
+#
+# How to convert px to pt in Inkscape
+# > Inkscape pixel is 1/90 of an inch, other software usually uses 1/72.
+# > This means if you need 10pt - use 12.5 in Inkscape (multiply with 1.25).
+# > http://www.inkscapeforum.com/viewtopic.php?f=6&t=5964
+
+text.usetex          : False
+mathtext.default     : regular
+
+font.family          : serif
+font.serif           : Arial, sans-serif
+font.sans-serif      : Arial, sans-serif
+font.cursive         : Arial, sans-serif
+font.size            : 16
+figure.titlesize     : 16
+legend.fontsize      : 16
+axes.titlesize       : 16
+axes.labelsize       : 16
+xtick.labelsize      : 16
+ytick.labelsize      : 16
+
+image.interpolation   : nearest
+image.resample        : False
+image.composite_image : True
+
+axes.spines.left     : True
+axes.spines.bottom   : True
+axes.spines.top      : False
+axes.spines.right    : False
+
+axes.linewidth       : 1.5
+xtick.major.width    : 1.5
+xtick.minor.width    : 1.5
+ytick.major.width    : 1.5
+ytick.minor.width    : 1.5
+
+lines.linewidth      : 1.5
+lines.markersize     : 3
+
+savefig.dpi          : 300
+savefig.format       : svg
+savefig.bbox         : tight
+savefig.pad_inches   : 0.1
+
+svg.image_inline     : True
+svg.fonttype         : none
+
+legend.frameon       : False
+
+figure.figsize	    : 4.0, 4.0
+axes.prop_cycle     : cycler('color', ['k', '1f77b4', 'ff7f0e', '2ca02c', 'd62728', '9467bd', '8c564b', 'e377c2', '7f7f7f', 'bcbd22', '17becf'])
